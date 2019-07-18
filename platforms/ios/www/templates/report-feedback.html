@@ -1,0 +1,100 @@
+<div class="bar bar-subheader nopadding">
+    <div class="button-bar">
+        <a class="button bg-pink" ng-show="id=='new'" ng-click='savedraft()'>{{ 'SVDF' | translate }}</a>
+        <a class="button bg-pink" ng-show="id!='new'" ng-click='updatedraft()'>{{ 'UPDF' | translate }}</a>
+        <a class="button bg-pinkdark" ng-click='send()'>{{ 'SNND' | translate }}</a>
+    </div>
+</div>
+<ion-view id="report-observation">
+    <ion-content scroll="true" overflow-scroll="false" padding="false" class="has-subheader">
+        <form novalidate class="simple-form">
+            <div class="list">
+                <div class="item item-divider item-icon-left">
+                    <i class="icon ion-ios-location"></i> {{ 'POSN' | translate }}
+                </div>
+                <!-- workaround to make the back button visible on those page (ionic hides it) -->
+                <style>
+                .back-button {
+                    display: block !important;
+                }
+                </style>
+                <div class="row" ng-hide="main.gotpos || main.sitepos || forceshowmap" ng-click="selectfrommap()">
+                    <h3>{{ 'NOLC' | translate }}<br><small>{{ 'SFRM' | translate }}</small></h3>
+                </div>
+                <div class="row" ng-show="main.gotpos  || main.sitepos || forceshowmap">
+                    <div class="col-50">
+                        <label class="item item-input item-stacked-label">
+                            <span class="input-label">{{ 'LTTD' | translate }}</span>
+                            <input type="number" ng-model='model.lat' ng-change='maprefresh()'>
+                        </label>
+                        <label class="item item-input item-stacked-label">
+                            <span class="input-label">{{ 'LGTD' | translate }}</span>
+                            <input type="number" ng-model='model.long' ng-change='maprefresh()'>
+                        </label>
+                    </div>
+                    <div id='mapgrid' class="col-50">
+                    	<!-- tiles="tiles" -->
+                        <leaflet id='latlongmap' layers="layers" center="center" defaults="defaults" width='100%'>
+                        </leaflet>
+                        <div id="mapBtnControll">
+                          <button id='bigmapbutton' class="button button-small button-stable icon ion-ios-search-strong" ng-click='openBigMap()'></button>
+                          <br/>
+                          <br/>
+                          <br/>
+                          <br/>
+                          <br/>
+                          <button id='centerpositionbutton' class="button button-small button-stable icon ion-pinpoint" ng-click='centerCurrentPositions()'></button>
+                        </div>  
+                    </div>
+                </div>
+                <div class="item item-divider item-icon-left">
+                    <i class="icon ion-android-calendar"></i> {{ 'DTTE' | translate }}
+                </div>
+                <label class="item item-input item-stacked-label">
+                    <input type="date" ng-model='model.date'>
+                </label>
+                <div class="item item-divider item-icon-left">
+                    <i class="icon ion-person"></i> {{ 'IDNT' | translate }}
+                </div>
+                <label class="item item-input item-select">
+                    <div class="input-label">
+                        {{ 'ANNM' | translate }}
+                    </div>
+                    <select ng-model='model.anonymous'>
+                        <option value="true">{{ 'TRUE' | translate }}</option>
+                        <option value="false">{{ 'FALSE' | translate }}</option>
+                    </select>
+                </label>
+                <div class="item item-divider item-icon-left">
+                    <i class="icon ion-android-star-half"></i> {{ 'FDBK' | translate }}
+                </div>
+                <label class="item item-input item-select">
+                    <div class="input-label">
+                        {{ 'FDBK' | translate }}
+                    </div>
+                    <select ng-model='model.feedback'>
+                        <option value="1">{{ 'POSI' | translate }}</option>
+                        <option value="0">{{ 'NEUT' | translate }}</option>
+                        <option value="-1">{{ 'NEGA' | translate }}</option>
+                    </select>
+                </label>
+                <div class="item bigfeedback">
+                    <div ng-show='(model.feedback>0)'><img src="img/emoticon/1.svg" />
+                        <p>{{ 'POSI' | translate }}</p>
+                    </div>
+                    <div ng-show='(model.feedback==0)'><img src="img/emoticon/0.svg" />
+                        <p>{{ 'NEUT' | translate }}</p>
+                    </div>
+                    <div ng-show='(model.feedback<0)'><img src="img/emoticon/-1.svg" />
+                        <p>{{ 'NEGA' | translate }}</p>
+                    </div>
+                </div>
+                <!--div class="item item-divider item-icon-left">
+                  <i class="icon ion-more"></i>
+                    Extra
+              </div-->
+                <!-- <ion-checkbox class="item-checkbox-right" ng-model='model.anonymous'>{{ 'ANNM' | translate }}</ion-checkbox> -->
+            </div>
+        </form>
+    </ion-content>
+</ion-view>

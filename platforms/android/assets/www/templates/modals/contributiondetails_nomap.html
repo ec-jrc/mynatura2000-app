@@ -1,0 +1,71 @@
+<ion-modal-view class="sidemenu-modal">
+    <ion-header-bar>
+        <h1 class="title">{{ 'OBSR' | translate }}</h1>
+        <div class="buttons">
+            <button class="button button-clear" ng-click="closeContrDetailModal()"><span class="ion-close-circled"> {{ 'CLOS' | translate }}</span></button>
+        </div>
+    </ion-header-bar>
+    <ion-content>
+        <div>
+            <h1 class="text-center">
+                <span ng-show='(selectedfeedback.properties.Type==1)'>{{ 'LSCA' | translate }}</span>
+                <span ng-show='(selectedfeedback.properties.Type==2)'>{{ 'SPCS' | translate }}</span>
+                <span ng-show='(selectedfeedback.properties.Type==3)'>{{ 'THRT' | translate }}</span>
+            </h1>
+	        <div class="row">
+	          	<div class="col-40">
+            		<p><strong>{{ 'CREDATE' | translate }}:</strong></p>
+            	</div>
+            	<div class="col-60">
+					<p>{{selectedfeedback.createdAt | date:"dd-MM-yyyy"}}</p>
+            	</div>
+            </div>
+			<div class="row" ng-show="selectedfeedback.observedAt.length > 0">
+				<div class="col-40">
+					<p><strong>{{ 'OBSDATE' | translate }}:</strong></p>
+            	</div>
+            	<div class="col-60">
+					<p>{{selectedfeedback.observedAt | date:"dd-MM-yyyy"}}</p>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-40">
+			    	<p><strong>{{ 'BYBY' | translate }}:</strong></p>
+			    </div>
+			    <div class="col-60">
+	                <span ng-show='((selectedfeedback.properties.ECASName.length > 0) && (selectedfeedback.properties.Anonymous==false))'>{{selectedfeedback.properties.ECASName}}</span>
+	                <span ng-show='((selectedfeedback.properties.ECASName.length == 0) || (selectedfeedback.properties.Anonymous==true))'>{{ 'ANNM' | translate }}</span>
+			    </div>
+			</div>
+                
+            <div ng-show="selectedfeedback.properties.Comment.length > 0" class="row"><div class="col-40"><p><strong>{{ 'COMNT' | translate }}:</strong></p></div><div class="col-60"><p>{{selectedfeedback.properties.Comment}}</p></div></div>
+            
+	        <div class="row" ng-show="sitesNameList.length > 0">
+	          	<div class="col-40">
+			    	<p><strong>{{ 'PRST' | translate }}:</strong></p>
+			   	</div>
+	          	<div class="col-60">
+				    <div ng-repeat="item in sitesNameList" item-height="80px" item-width="100%">
+				    	<p ng-click="linkToSiteMap(item.code)" class="linkButton">{{item.name}}</p>
+				    </div>
+				</div>
+			</div>
+            <!-- <p><strong>{{ 'SLIDE' | translate }}:</strong> --><!-- ng-click="showImageSlider()" -->
+            <!-- <div class="picsgrid" ng-repeat='picture in imagePreview' style="background-image:url('{{picture}}')">  -->
+            <div id="observation_pictures" class="picsgrid" style="background-image:url('{{selectedfeedback.properties.Image[currIndex]}}')">
+	            <!-- <p class="imgIndex">{{ 'PICT' | translate }} {{currIndex+1}}/{{selectedfeedback.properties.Image.length}} -->
+	            <p><img height="50px" class="imgArrowLeft" src="img/arrow_left.png" ng-click="checkCurrIndex('-')"/></p>
+	            <p><img height="50px" class="imgArrowRight" src="img/arrow_right.png" ng-click="checkCurrIndex('+')"/></p>
+				<div class="photoBrowserIndicator" data-tap-disabled="true">
+					<span ng-repeat="photo in selectedfeedback.properties.Image track by $index" ng-class="{'active': currIndex == $index}">●</span>
+				</div>
+            </div>
+            
+            <!--
+            <div class="picsgrid" ng-repeat='picture in selectedfeedback.properties.Image' style="background-image:url('{{picture}}')">
+            </div>
+             -->
+
+        </div>
+    </ion-content>
+</ion-modal-view>

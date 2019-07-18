@@ -1,0 +1,41 @@
+.platform-ios.subheader22 {
+  top: 40px !important;
+ }
+
+.platform-ios.platform-cordova:not(.fullscreen) .has-subheader {
+  top: 109px !important;
+ }
+ 
+ .platform-ios #site-menu-bar {
+  /*margin-top: 20px !important;*/
+ }
+ 
+ 
+ 
+ .bigmapmodal .scroll, .bigmapmodal #containerforbigmap {
+  height:100%;
+ }
+ 
+  @media screen and (max-width: 767px) {
+        #home .block {
+         display:none; }
+  }
+  
+.forcehide {
+  display: none !important;
+ }
+
+.forceshow {
+  display: block !important;
+ }
+
+.platform-ios .marginFix{
+  margin-top: 20px;
+  height: auto;
+  /*height: calc(100% -20px);*/
+}
+
+#report-observation .button-bar > .button {
+line-height: 11px;
+padding-top: 10px;
+}

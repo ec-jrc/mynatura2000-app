@@ -1,0 +1,599 @@
+/*
+To customize the look and feel of Ionic, you can override the variables
+in ionic's _variables.scss file.
+
+For example, you might change some of the default colors:
+
+$light:                           #fff !default;
+$stable:                          #f8f8f8 !default;
+$positive:                        #387ef5 !default;
+$calm:                            #11c1f3 !default;
+$balanced:                        #33cd5f !default;
+$energized:                       #ffc900 !default;
+$assertive:                       #ef473a !default;
+$royal:                           #886aea !default;
+$dark:                            #444 !default;
+*/
+
+/*test */
+/* test 2 */
+/* test 5 */
+
+
+
+
+// The path for our ionicons font files, relative to the built CSS in www/css
+$ionicons-font-path: "../lib/ionic/fonts" !default;
+
+// Include all of Ionic
+@import "www/lib/ionic/scss/ionic";
+
+/*
+* Fonts
+* --------------------------------------------------
+*/
+
+$ECSquareSansPro-font-path: "../lib/fonts" !default;
+@font-face {
+    font-family: 'ECSquareSansPro';
+    src: url('#{$ECSquareSansPro-font-path}/ECSquareSansPro.eot');
+    src: url('#{$ECSquareSansPro-font-path}/ECSquareSansPro.eot?#iefix') format('embedded-opentype'),
+    url('#{$ECSquareSansPro-font-path}/ECSquareSansPro.woff2') format('woff2'),
+    url('#{$ECSquareSansPro-font-path}/ECSquareSansPro.woff') format('woff'),
+    url('#{$ECSquareSansPro-font-path}/ECSquareSansPro.ttf') format('truetype'),
+    url('#{$ECSquareSansPro-font-path}/ECSquareSansPro.svg#ECSquareSansPro') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6,
+input,
+button,
+select,
+textarea,
+.ionic-body,
+.tab-item {
+    font-family: "ECSquareSansPro" !important;
+}
+
+
+/*
+* Home
+* --------------------------------------------------
+*/
+#home{
+    // ion-header-bar{
+    //     div.title{
+    //         overflow: visible;
+    //         @media screen and (min-width: 330px) {
+    //             text-align: center;
+    //             margin-right: 0;
+    //             margin-left: 20px;
+    //         }
+    //     }
+    // }
+ 	ion-content{
+ 		background-color: #89C4F4;
+ 		background-image: url("../img/bg.svg");
+ 		background-size: cover;
+ 		background-repeat: no-repeat;
+ 		background-position: bottom;
+ 		
+        section.home-container{
+            height: 100%;
+            width: 100%;
+            margin: auto;
+            div.row{
+                height: 100%;
+                width: 100%;
+                overflow: hidden;
+                -webkit-justify-content: flex-start;
+                -moz-justify-content: flex-start;
+                justify-content: flex-start;
+                flex-wrap: wrap;
+                div.col-50{
+                    height: calc(100% / 4);
+                    flex: 0 0 50%;
+                    @media screen and (min-width: 600px) {
+                        flex: 0 0 33.33%;
+                    }
+                    padding: 2.5px;
+                }
+            }
+                
+        }
+
+        .main-menu__button{
+            //width: 80%;
+            height: 100%;
+            max-width: 90% ;
+        }
+ 	}
+}
+
+/*
+* About
+* --------------------------------------------------
+*/
+
+#about{
+	.col{
+		max-width: none!important;
+	}
+    background-color: #89C4F4;
+    background-image: url("../img/bg.svg");
+	background-size: 100%;
+	background-repeat: no-repeat;
+	background-position: 50% 110%;
+    ion-content{
+        //height: 100%;
+        font-size: 20px;
+        color: #ffffff;
+     	a{
+     		color: #3973B2;
+			text-decoration: none;
+     	}
+        div.icon{
+    		img{ width: 80%; max-width: 80px;}
+    	}
+        div.aboutText, div.contact, div.links{
+        	background-color: #04BFBF;
+        	margin-bottom: 50px;
+        	padding-top: 10px;
+        }
+        div.aboutText{
+        	ul{
+        		list-style-type: square;
+        		padding-left: 25px;
+        		li{
+        			margin-bottom: 1em;
+        		}
+        	}
+        }
+        div.contact{text-align: center;}
+        div.links{
+        	ol{
+        		list-style-type: decimal;
+        		padding-left: 25px;
+        	}
+        }
+    }
+}
+
+/*
+* Meteo
+* --------------------------------------------------
+*/
+
+#meteo{
+	ion-content{
+		font-size: 18px;
+		background-color: #89C4F4;
+		.intro{
+			padding: 5px;
+			width: 100%;
+			background-color: #04BFBF;
+			color: #ffffff;
+		}
+		ion-list{
+			.itemContainer{
+				border-bottom: 1px solid #04BFBF;
+				ion-item.main{
+					//font-size: 1.2em;
+					margin: 0;
+					border: none;
+					color: #000000;
+					// border-width: 1px 0 1px 0;
+					// border-color: #04BFBF;
+					.img{ img{width: 80%; max-width: 80px;}}
+					&.main-active{
+						color: #04BFBF;
+					}
+				}
+				div.accordion{
+					background-color: #ffffff;
+					width: 100%;
+					padding: 10px;
+					text-align: right;
+					//img{ width: 20px;}
+					div{
+						img{ width: 20px;}
+					}
+				}
+			}
+		}
+	}
+}
+
+/*
+* Pollutants
+* --------------------------------------------------
+*/
+
+#pollutants{
+	ion-content{
+		font-size: 18px;
+		background-color: #89C4F4;
+		.intro{
+			padding: 5px;
+			width: 100%;
+			background-color: #04BFBF;
+			color: #ffffff;
+		}
+		ion-list{
+			.itemContainer{
+				border-bottom: 1px solid #04BFBF;
+				ion-item.main{
+					font-size: 1.2em;
+					margin: 0;
+					border: none;
+					color: #000000;
+					// border-width: 1px 0 1px 0;
+					// border-color: #04BFBF;
+					.img{ img{width: 80%; max-width: 80px;}}
+					&.main-active{
+						color: #04BFBF;
+					}
+				}
+				div.accordion{
+					background-color: #ffffff;
+					width: 100%;
+					padding: 10px;
+					text-align: left;
+					color: #04BFBF;
+					h4{
+						color: #04BFBF;
+						font-size: 1.2em;
+					}
+					.viewMap{
+						color: #000000;
+						width: 100%;
+						text-align: right;
+						img{ width: 20px;}
+					}
+						
+				}
+			}
+		}
+	}
+}
+
+/*
+* Measuring networks
+* --------------------------------------------------
+*/
+
+#network{
+	ion-content{
+		font-size: 18px;
+		background-color: #89C4F4;
+		.intro{
+			padding: 5px;
+			width: 100%;
+			background-color: #04BFBF;
+			color: #ffffff;
+			.information{
+				color: #3973B2;
+			}
+		}
+		li{
+			background-image: url("../img/flag-UE.png");
+			background-size: 30px;
+			background-position: 10px center;
+			background-repeat: no-repeat;
+			padding-left: 50px;
+			.toggle input:checked + .track {
+			  border-color: #04BFBF;
+			  background-color: #04BFBF;
+			}
+		}
+		img.flag{
+			height: 25px;
+			padding-top: 5px;
+		}
+	}
+}
+
+/*
+* Map
+* --------------------------------------------------
+*/
+
+#sensorsMap{
+	ion-content{
+		//top: 0;
+		//height: 100%;
+		background-color: #89C4F4;
+		#map{
+			height: 100%;
+			width: 100%;
+			position: relative;
+			z-index: 1;
+		}
+		.mapInfo{
+			position: absolute;
+			z-index: 9999;
+			width: 100%;
+			min-height: 25px;
+			background-color: #04BFBF;
+			bottom: 0;
+			text-align: center;
+			color: #ffffff;
+			font-weight: bold;
+			padding-right: 5px;
+			padding-top: 10px;
+			padding-bottom: 10px;
+			span{
+				padding-left: 55px; //width of arrow picture to center all
+				font-size: 1.3em;
+			}
+			img{
+				//display: block;
+				//position: relative;
+				float: right;
+				height: 25px;
+				margin-right: 10px;
+				margin-bottom: 5px;
+				//left: calc(100% - 30px);
+			}
+			div.additionnalInfo{
+				min-height: 68px;
+				span.emptySelect{
+					font-size: 20px;
+					padding: 0;
+				}
+				img{
+					height: 40px;
+					margin: auto;
+				}
+				select{
+					background-color: #ffffff;
+					border: 1px solid #ffffff;
+					background-image: url('../img/arrow-full-down.svg');
+					background-repeat: no-repeat;
+					background-position: 98% center;
+					background-size: 20px;
+					padding-right: 25px;
+					width: 80%;
+					height: 35px;
+				}
+			}
+		}
+	}
+}
+
+/*
+* Timeseries
+* --------------------------------------------------
+*/
+
+#timeseries{
+	ion-content{
+		div.selectInput{
+			width: 100%;
+			text-align: center;
+			padding-top: 5px;
+			padding-bottom: 10px;
+			#phenomenomSelectTs{
+				background-color: #ffffff;
+				border: 1px solid #04BFBF;
+				background-image: url('../img/arrow-full-down.svg');
+				background-repeat: no-repeat;
+				background-position: 98% center;
+				background-size: 15px;
+				padding-right: 25px;
+				width: 80%;
+				height: 40px;
+				text-align: center;
+			}
+		}
+		.content{
+			width: 100%;
+			height: calc(100% - 150px); //bottom height
+			#rawTab{
+				.tableHeader{
+					text-align: center;
+					border: solid #B2B2B2;
+					border-width: 1px 0 1px 0;
+					height: 40px;
+					font-weight: bold;
+					padding: 0;
+					.col:first-child(){
+						border: solid #B2B2B2;
+						border-width: 0px 1px 0 0;
+					}
+				}
+				height: 100%;
+				//background-color: blue;
+				ion-scroll{
+					height: calc(100% - 40px); //tabHeader height	
+					.row{
+						//margin: 0;
+						text-align: center;
+						padding: 0;
+						border-bottom: 1px solid #B2B2B2;
+						.col.border{
+							border-right: 1px solid #B2B2B2;
+						}
+					}
+				}
+			}
+		}
+			
+		#timeSeriesBottom{
+			height: 150px;
+			//background-color: red;
+			.buttonSection{
+				text-align: center;
+				img{
+					height: 40px;
+				}	
+			}
+		}
+	}
+}
+
+
+
+
+
+/*
+* General & commun style
+* -----------------------------------
+*/
+
+.header{ 
+	background-color: #27393D; color: #ffffff;
+	.headerBackButton{ 
+		color: #ffffff;
+	}
+}
+#headerMenuButton{ color: #ffffff;}
+
+
+/*
+* Modal
+* --------------------------------------------------
+*/
+
+.sidemenu-modal {
+    background-color: #27393D;
+    ion-header-bar {
+        border-bottom: 1px solid #fff;
+        background-color: #27393D;
+        .title,
+        .button {
+            color: #fff !important;
+        }
+    }
+    > ion-content {
+        color: #fff;
+        padding: 40px;
+        //text-align: justify;
+        font-size: 20px;
+        //line-height: 1.2em;
+        .sidemenu-modal-content-title {
+            color: #C1DCEC;
+            //font-size: 17pt;
+            font-size: 130%;
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+        p{
+            margin-bottom: 0;
+        }
+        a {
+            color: #C1DCEC;
+        }
+        .sidemenu-modal-content-button {
+            display: block;
+            text-align: center !important;
+            color: #29ABE2 !important;
+            font-size: 15pt;
+            cursor: hand;
+            cursor: pointer;
+        }
+    }
+}
+
+/*
+** Header menu
+* -------------------------------------
+*/
+
+select{
+	-webkit-appearance: none;        /*Removes default chrome and safari style*/
+	padding-left: 5px;
+}
+#headerMenu{
+	-webkit-text-size-adjust : none;
+	position: absolute;
+	z-index: 100;
+	border: 1px solid #04BFBF;
+	background-color: #27393D;
+	color: #04BFBF;
+	right: 0px;
+	top: 44px; 
+	font-size: 17px;
+	ul{
+	    li{
+	        border-bottom: 1px solid #04BFBF;
+	        padding: 15px 18px 15px 18px;
+	        font-size: 100%;
+	        &:hover{
+	            background-color: #04BFBF;
+	            color: #27393D;
+	        }
+	    }
+	}
+}
+
+.textAlignLeft{
+	text-align: left;
+}
+.textAlignRight{
+	text-align: right;
+}
+.textAlignCenter{
+	text-align: center;
+}
+.bold{
+	font-weight: bold;
+}
+.italic{
+	font-size: italic;
+}
+.hyperlink{
+	color: #3973B2;
+	text-decoration: none;
+}
+
+.center{
+	display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-direction: normal;
+    -moz-box-direction: normal;
+    -webkit-box-orient: horizontal;
+    -moz-box-orient: horizontal;
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-flex-wrap: nowrap;
+    -ms-flex-wrap: nowrap;
+    flex-wrap: nowrap;
+    -webkit-box-pack: center;
+    -moz-box-pack: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-align-content: stretch;
+    -ms-flex-line-pack: stretch;
+    align-content: stretch;
+    -webkit-box-align: center;
+    -moz-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+
+/* iOS fix and spef */
+.platform-ios{
+	#headerMenu{
+		margin-top: 20px;
+	}
+}

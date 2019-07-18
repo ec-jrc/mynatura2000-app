@@ -1,0 +1,106 @@
+<div class="bar bar-subheader nopadding">
+    <div class="button-bar">
+      <a class="button bg-brown" style="font-weight: bold; border: 1px solid #000000;">{{ 'DRFT' | translate }}</a>
+      <a class="button bg-gold" href="#/app/mysentreports">{{ 'RPTS' | translate }}</a>
+    </div>
+</div>
+
+<!-- workaround to make the back button visible on those page (ionic hides it) -->
+     <style>
+         .back-button {
+             display: block !important;
+         }
+     </style>
+
+<ion-view id="myreports" class='standardbg'>
+    
+    
+    <ion-content scroll="true" overflow-scroll="true" padding="false" class="has-subheader">
+        
+        
+       
+        
+        
+        <div class="card" ng-show="found==0">
+          <div class="item item-text-wrap">
+             {{ 'LOAD' | translate }}...
+          </div>
+        </div>
+        
+        <div class="card" ng-show="found==2">
+          <div class="item item-text-wrap">
+           <!--  You do not have saved draft at the moment. If you want to see the reports you already sent, tap on the <a ui-sref="app.mysentreports">Reports Tab</a> or <a ui-sref="app.report" class="main-menu__button">create a report now!</a> -->
+            {{ 'DRFNO1' | translate }} <a ui-sref="app.mysentreports">{{ 'RPTS' | translate }}</a>  {{ 'DRFNO2' | translate }}  <a ui-sref="app.report" class="main-menu__button"> {{ 'DRFNO3' | translate }}</a> 
+          </div>
+        </div>
+        
+        
+        <div ng-show="found==1">
+            
+            
+            
+                   
+            
+         <ion-list>
+                            
+         <label class="item item-input item-select">
+            <div class="input-label">
+              {{ 'TODF' | translate }}
+            </div>
+            <select ng-model='showfilter'>
+              <option value="0" selected>{{ 'ALLL' | translate }}</option>
+              <option value="1" >{{ 'OVFB' | translate }}</option>
+              <option value="2" >{{ 'RPAL' | translate }}</option>
+              <option value="3" >{{ 'RPLS' | translate }}</option>
+              <option value="4" >{{ 'RPSP' | translate }}</option>
+              <option value="5" >{{ 'RPTST' | translate }}</option>
+            </select>
+         </label>
+             
+         <div class='item'>
+           
+            <div class='grid'>
+              <div class='row'>
+                <div width-50 class='col text-center' ng-click='sendall()'><span class="icon ion-forward"></span><br>{{ 'SBTA' | translate }}</div>
+                <div width-50 class='col text-center' ng-click='deletedraft("all")'><span class="icon ion-trash-a"></span><br>{{ 'DLTA' | translate }}</div>
+              </div>
+            </div>
+             
+         </div> 
+                
+                
+                <div ng-repeat="item in results | filterDrafts:showfilter:0 | orderBy:'-date'" class="item item-button-right">
+                  
+                    <img style="float: left; margin: 0px 10px 0px 0px;" ng-show="item.type==1" src="img/emoticon/{{item.feedback}}.svg" height="45px"/>
+                    <img style="float: left; margin: 0px 10px 0px 0px;" ng-show="item.type==0" src="{{item.pictures[0]}}" height="45px"/>
+                    <h2  ng-show="item.type==1" >{{ 'FDBK' | translate }}</h2>
+                    <h2  ng-show="item.type==0" >
+                        <span ng-show="item.picturetype==1" >{{ 'LSCA' | translate }}</span>
+                        <span ng-show="item.picturetype==2" >{{ 'SPCS' | translate }}</span>
+                        <span ng-show="item.picturetype==3" >{{ 'THRT' | translate }}</span>
+                        <span ng-hide="item.picturetype==1 || item.picturetype==2 || item.picturetype==3" >{{ 'OBSR' | translate }}</span>
+                    </h2>
+                    
+                    <p>{{item.date | date:"dd-MM-yyyy"}}</p>
+                    
+                    
+                    
+                    <div class="buttons">
+                        <button ng-click='send_single(item.id, item.type)' class="button icon ion-forward"></button>
+                        <button ng-click='deletedraft(item.id)' class="button icon ion-trash-a" ></button>
+
+                        <a ng-show="item.type==1" class="button icon ion-edit" href="#/app/reportfeedback/1/{{item.id}}/2"></a><!-- feedback -->
+                        <a ng-show="item.type==0" class="button icon ion-edit" href="#/app/reportobservation/0/{{item.id}}"></a><!-- report -->
+                    </div>
+                </div>
+                
+                
+                
+            </ion-list>
+            
+        </div>
+        
+    </ion-content>
+    
+    
+</ion-view>

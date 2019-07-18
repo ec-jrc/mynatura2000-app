@@ -1,0 +1,23 @@
+<ion-modal-view class="sidemenu-modal">
+    <ion-header-bar>
+        <h1 class="title">{{ 'ALRT_SIT_T' | translate }}</h1>
+        <div class="buttons">
+            <button class="button button-clear" ng-click="closeSiteAlert()"><span class="ion-close-circled"> {{ 'CLOS' | translate }}</span></button>
+        </div>
+    </ion-header-bar>
+    <ion-content>
+        <div>
+            <p>{{ 'ALRT_SIT_H2' | translate }}</p>
+            <h2 class="text-center">{{sitealert.name}}</h2>
+            <p class="text-center textpic" ng-show="sitealert.type==1"><img src='img/sitetype/1.svg'><br>{{ 'SCI' | translate }}</p>
+            <p class="text-center textpic" ng-show="sitealert.type==2"><img src='img/sitetype/2.svg'><br>{{ 'SPA' | translate }}</p>
+            <p class="text-center textpic" ng-show="sitealert.type==3"><img src='img/sitetype/3.svg'><br>{{ 'SCISPA' | translate }}</p>
+                <a  href='#/app/site/siteinfo/{{sitealert.id}}' ng-click="closeSiteAlert()" class="button button-full button-calm icon-left ion-ios-information">
+                  {{ 'SITDET' | translate }}
+                </a>
+                <button ng-click="closeSiteAlert()" class="button button-full button-assertive icon-left ion-close-circled">
+                  {{ 'CLOS' | translate }}
+                </button>
+        </div>
+    </ion-content>
+</ion-modal-view>

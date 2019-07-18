@@ -1,0 +1,25 @@
+<ion-modal-view class="sidemenu-modal">
+    <ion-header-bar>
+        <h1 class="title">{{ 'DELEX' | translate }}</h1>
+        <div class="buttons">
+            <button class="button button-clear" ng-click="closemodaldelete()"><span class="ion-close-circled"> {{ 'CLOS' | translate }}</span></button>
+        </div>
+    </ion-header-bar>
+    <ion-content>
+        <div>
+            <div>
+            <p>{{ 'DELCF' | translate }}</p>
+                
+                <!--  icon-left ion-checkmark-round -->
+                <button ng-hide='processing'  ng-click="confirmdelete()" class="button button-full button-balanced">
+                  {{ 'KEPK' | translate }}
+                </button>
+                <!--  icon-left ion-trash-a -->
+                <button  ng-hide='processing'  ng-click="closemodaldelete()"  class="button button-full button-assertive">
+                  {{ 'DELEB' | translate }}
+                </button>
+                
+        </div>
+        </div>
+    </ion-content>
+</ion-modal-view>

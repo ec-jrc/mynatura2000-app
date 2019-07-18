@@ -1,0 +1,37 @@
+<ion-content  class="padding sitebg" scroll="true" overflow-scroll='false'>
+<div id='site-feedback'  class="has-header has-subheader">
+ 
+    
+    <div ng-show='loading'>
+        <p>{{ 'LDNG' | translate }}...</p>
+    </div>
+    
+    <div ng-hide='loading'>
+      <div class="item item-divider">
+        {{ 'FDBK' | translate }}
+      </div>
+        <div class="list">
+          <div  class="item item-avatar-right" ng-repeat='feedback in feedbacks'>
+            <a href="#/app/reportfeedback/1/new/{{feedback.feedback}}"><img src="img/emoticon/{{feedback.feedback}}.svg" style="position: absolute;top: 16px;right: 16px;max-width: 40px;max-height: 40px;width: 100%;height: 100%;border-radius: 50%;"></a>
+                <strong ng-show='((feedback.user.length > 0) && (feedback.anonymous==false) && (feedback.feedback<0))'>{{ 'NEGA' | translate }}: </strong>
+                <strong ng-show='((feedback.user.length > 0) && (feedback.anonymous==false) && (feedback.feedback==0))'>{{ 'NEUT' | translate }}: </strong>
+                <strong ng-show='((feedback.user.length > 0) && (feedback.anonymous==false) && (feedback.feedback>0))'>{{ 'POSI' | translate }}: </strong>
+                <strong ng-show='((feedback.user.length > 0) && (feedback.anonymous==false))'>{{feedback.value}}</strong>
+                <!-- <strong ng-show='((feedback.user.length == 0) || (feedback.anonymous==true))'>{{ 'ANNM' | translate }}</strong>
+                  {{item.createdAt | date:"dd-MM-yyyy"}}
+				-->
+          </div>
+        </div>
+        <div ng-hide="totalFeedbacks > 0">
+           <p>{{ 'SNFD' | translate }}
+               <a ui-sref="app.report" class="link_feedback">
+                  <p>{{ 'DRFNO3' | translate }}</p>
+               </a>
+            </p>
+        </div>
+
+
+    </div> 
+    
+</div>
+</ion-content>

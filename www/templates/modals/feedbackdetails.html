@@ -1,0 +1,71 @@
+<ion-modal-view class="sidemenu-modal">
+    <ion-header-bar>
+        <h1 class="title">{{ 'FDBK' | translate }}</h1>
+        <div class="buttons">
+            <button class="button button-clear" ng-click="closeFeedbackDetailModal()"><span class="ion-close-circled"> {{ 'CLOS' | translate }}</span></button>
+        </div>
+    </ion-header-bar>
+    <ion-content>
+        <div>
+	        <div class="row">
+          		<div class="col-60">
+			        <div class="row">
+			          	<div class="col-100">
+			        		<p><strong>{{ 'CREDATE' | translate }}:</strong></p>
+			        		<p>{{selectedfeedback.createdAt | date:"dd-MM-yyyy"}}</p>
+			        	</div>
+			        </div>
+			        <div class="row" ng-show="selectedfeedback.observedAt.length > 0">
+			          	<div class="col-100">
+			        		<p><strong>{{ 'OBSDATE' | translate }}:</strong></p>
+			        		<p>{{selectedfeedback.observedAt | date:"dd-MM-yyyy"}}</p>
+			        	</div>
+			        </div>
+			        <div class="row">
+			          	<div class="col-100">
+			        		<p><strong>{{ 'ANNM' | translate }}:</strong></p>
+			        		<p ng-if="selectedfeedback.properties.Anonymous == true">{{ 'TRUE' | translate }}</p>
+			        		<p ng-if="selectedfeedback.properties.Anonymous == false">{{ 'FALSE' | translate }}</p>
+			        	</div>
+			        </div>
+			        <div class="row" ng-show="sitesNameList.length > 0">
+			          	<div class="col-100">
+					    	<p><strong>{{ 'PRST' | translate }}:</strong></p>
+						    <div ng-repeat="item in sitesNameList" item-height="80px" item-width="100%">
+				    			<p ng-click="linkToSiteMap(item.code)" class="linkButton">{{item.name}}</p>
+						    </div>
+						</div>
+					</div>
+		            <!--    
+		            <p><strong>{{ 'BYBY' | translate }}:</strong> 
+		               <span ng-show='((selectedfeedback.properties.ECASName.length > 0) && (selectedfeedback.properties.Anonymous==false))'>{{selectedfeedback.properties.ECASName}}</span>
+		               <span ng-show='((selectedfeedback.properties.ECASName.length == 0) || (selectedfeedback.properties.Anonymous==true))'>{{ 'ANNM' | translate }}</span>
+		            </p>
+		            -->
+		        </div>
+          		<div class="col-40">
+		            <div class="bigfeedback">
+		                <div ng-show='(selectedfeedback.properties.EmoticonValue>0)' >
+		                    <img src="img/emoticon/1.svg" /><p>{{ 'POSI' | translate }}</p>
+		                </div>
+		                <div ng-show='(selectedfeedback.properties.EmoticonValue==0)'>
+		                    <img src="img/emoticon/0.svg" /><p>{{ 'NEUT' | translate }}</p>
+		                </div>
+		                <div ng-show='(selectedfeedback.properties.EmoticonValue<0)' >
+		                    <img src="img/emoticon/-1.svg"/><p>{{ 'NEGA' | translate }}</p>
+		                </div>
+				    </div>
+          		</div>
+		    </div>
+            <div id='mapgrid' class="mapsgrid">
+            	<!-- tiles="tiles" -->
+            	<leaflet id='feedbackmap' layers="layers" markers="markers" center="center" defaults="defaults" width='100%'>
+                </leaflet>
+                <div id="mapBtnControll">
+                	<button id='centerpositionbutton' class="button button-medium button-stable icon ion-pinpoint" ng-show="centeredInObs" ng-click='centerCurrentPositions()'></button>
+                </div>  
+	        </div>
+                        
+        </div>
+    </ion-content>
+</ion-modal-view>

@@ -1,0 +1,88 @@
+<ion-view id="list">
+
+<style>
+    /* if I give it inline, WP will not read it (?) */
+    .loadbar{
+        background-color:rgb({{255-(percentage*2)}}, {{percentage*2}}, 0);
+        width:{{percentage}}%;
+    }
+</style>    
+   
+    
+    <ion-content scroll="true" overflow-scroll="false" padding="false">
+        
+        
+
+<div class="row filterdiv">
+  <div class="col col-90">
+    
+            <div class="list">
+              <label class="item-input-wrapper">
+                <i class="icon ion-ios-search placeholder-icon"></i>
+                <input class="item-input-wrapper" type="search" placeholder="{{'SEARCH' | translate}}" ng-model="searchText" >
+              </label>
+                
+                
+              <div ng-show='expandedsearch' class='expandedsearch'>
+                  <label class="item item-input item-select">
+                    <div class="input-label">
+                      {{ 'CTRY' | translate }}
+                    </div>
+                    
+                      
+                    <select ng-init="selectedCountry = 0" ng-model="selectedCountry" ng-options="country.country as country.name for country in countries"><option selected="selected"></option></select>
+                      
+                      
+                  </label>
+
+
+              </div>    
+            </div>
+    
+  </div>
+  <div class="col col-10">
+      <button class="button button-icon icon ion-ios-plus-outline pull-right" ng-click='expandSearch()' ng-hide='expandedsearch'></button>
+      <button class="button button-icon icon ion-ios-minus-outline pull-right" ng-click='minifySearch()' ng-show='expandedsearch'></button>
+  </div>
+</div>
+
+        
+        
+        
+<div class="card" ng-show="percentage<100">
+  <div class="item item-text-wrap">
+     {{ 'LDNG' | translate }}: {{percentage}}%
+     <div class='loadbar'></div>
+  </div>
+</div> 
+        
+        
+        <div class="list">
+
+            <a class="item item-avatar" item-height='70px' item-width='100%' collection-repeat="site in sites  | filterSites:searchText:selectedCountry" href="#/app/site/siteabout/{{site.SITECODE}}">
+              <img src="img/sitetype/{{site.SITETYPE}}.svg">
+              <p>{{site.SITENAME}}</p>
+            </a>
+
+        </div>
+
+    <div class='spacebottom'><!-- to avoid overlapping footer --></div>    
+    </ion-content>
+    
+    <div class="bar bar-footer">
+        
+        
+        <div class="row">
+        <div class="col-50">
+            <p><img src='img/sitetype/1.svg'> {{ 'SCI' | translate }}</p>
+            <p><img src='img/sitetype/2.svg'> {{ 'SPA' | translate }}</p>
+        </div>
+        <div class="col-40">
+            <p><img src='img/sitetype/3.svg'> {{ 'SCISPA' | translate }}</p>
+        </div>
+      </div>
+        
+
+            <button class="button button-icon icon ion-ios-information-outline pull-right pull-bottom"  ng-click="openInfoListModal()"></button>
+    </div>
+</ion-view>

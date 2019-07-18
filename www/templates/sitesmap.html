@@ -1,0 +1,36 @@
+<ion-view id="map">
+    
+    
+    <ion-content scroll="false" overflow-scroll="false" padding="false" data-tap-disabled="true" >
+       
+            <leaflet id='site-map1' layers="layers" defaults='defaults' center="center" markers="marker" paths="paths" ></leaflet>
+                        <div id="mapBtnControll">
+                          <button id='centerpositionbutton' class="button button-medium button-stable icon ion-pinpoint" ng-show="centeredIn" ng-click='centerCurrentPositions()'></button>
+                        </div>  
+
+        	<div class="mapInfoFooter" data-tap-disabled="true">
+	            <span class="siteTitle" ng-if="additionnalInfo.visible">{{additionnalInfo.selectedSite.SITENAME}}</span>
+	            <span class="siteTitle" ng-if="!additionnalInfo.visible">{{ 'TAPP' | translate }}.</span>
+	            <img src="img/arrow_up.svg" class="arrow" ng-if="!additionnalInfo.visible" ng-click="additionnalInfo.visible = true">
+	            <img src="img/arrow_down.svg" class="arrow" ng-if="additionnalInfo.visible" ng-click="additionnalInfo.visible = false">
+	            <div class="additionnalInfo row"  ng-if="additionnalInfo.contentSelected && additionnalInfo.visible">
+	            	<div class="col">
+			            <p>
+			                <span ng-show='(additionnalInfo.selectedSite.SITETYPE==1)' class="textpic"><img src='img/sitetype/1.svg'> {{ 'SCI' | translate }}</span>
+			                <span ng-show='(additionnalInfo.selectedSite.SITETYPE==2)' class="textpic"><img src='img/sitetype/2.svg'> {{ 'SPA' | translate }}</span>
+			                <span ng-show='(additionnalInfo.selectedSite.SITETYPE==3)' class="textpic"><img src='img/sitetype/3.svg'> {{ 'SCISPA' | translate }}</span>  
+			                <br/><a class='button block' href="#/app/site/siteinfo/{{additionnalInfo.selectedSite.SITECODE}}">{{ 'VWDT' | translate }}</a>
+			            </p>  
+			            <!-- <a class='button button-full' href="#/app/site/siteabout/{{additionnalInfo.selectedSite.SITECODE}}"  ng-click="closeSiteDetailModal()" >View Details</a> -->
+			            
+			        </div>
+	            </div>
+	            <div class="additionnalInfo row"  ng-if="!additionnalInfo.contentSelected && additionnalInfo.visible">
+	            	<div class="col">
+						<span class="general">{{ 'TAPP' | translate }}.</span><br/>
+		                <img src="img/you.png"> <span class="currentLocation">{{ 'CRLC' | translate }}.</span>
+	            	</div>
+	            </div>
+	        </div>
+    </ion-content>
+</ion-view>

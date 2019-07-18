@@ -1,0 +1,33 @@
+<ion-view id="login" class='loginbg'>
+    
+    
+    <ion-content scroll="true" overflow-scroll="true" padding="false">
+        
+        
+        
+       <div class="padding">
+        
+       
+     <div class="card">
+          <div class="item item-text-wrap text-center">
+               
+			<p ng-if="main.user.ICCID != ''">{{ 'LIAS' | translate }}</p>
+            <p ng-if="main.user.ICCID == ''">{{ 'NLGN' | translate }}</p>
+            <!-- <h3 ng-show='logged' class="padding">{{main.user.ECASName}}</h3>  -->
+            <small>{{main.user.ECASmail}}</small><br>
+           
+        	<button ng-hide='logged'  ng-click="login()" class="button button-balanced icon-left ion-log-in padding">{{ 'LGIN' | translate }}</button>
+        	<button ng-hide='logged' ng-click="registerECAS()" class="button button-positive icon-left ion-log-out padding">{{ 'RGST' | translate }}</button>
+        	<button ng-if="main.connected == true" ng-show='logged'  ng-click="logoff()" class="button button-assertive icon-left ion-log-out padding">{{ 'LGUT' | translate }}</button>
+        
+           	<p ng-if="main.user.ICCID != ''" class="text-center padding"><small>{{ 'LGINK' | translate }}</small></p>
+        
+        </div>
+    </div>
+           
+           
+       </div>
+       
+
+    </ion-content>
+</ion-view>

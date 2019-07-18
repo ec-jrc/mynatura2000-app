@@ -1,0 +1,11 @@
+<ion-modal-view class="sidemenu-modal">
+    <ion-header-bar>
+        <h1 class="title">{{modaltitle}}</h1>
+        <div class="buttons">
+            <button class="button button-clear" ng-click="closeMenuModal('privacyStatement')"><span class="ion-close-circled"> {{ 'CLOS' | translate }}</span></button>
+        </div>
+    </ion-header-bar>
+    <ion-content>
+        <div class="privacy" bind-unsafe-html="modalcode"></div>
+    </ion-content>
+</ion-modal-view>

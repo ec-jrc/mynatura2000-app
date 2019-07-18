@@ -1,0 +1,21 @@
+<ion-modal-view class="map-modal">
+    <ion-header-bar>
+        <h1 class="title">{{selectedsite.SITECODE}}</h1>
+        <div class="buttons">
+            <button class="button button-clear" ng-click="closeSiteDetailModal()"><span class="ion-close-circled"> {{ 'CLOS' | translate }}</span></button>
+        </div>
+    </ion-header-bar>
+    <ion-content scroll="false">
+        <div class="bounds">
+            
+            <h2>{{selectedsite.SITENAME}}</h2>
+            <p>
+                <span ng-show='(selectedsite.SITETYPE==1)' class="textpic"><img src='img/sitetype/1.svg'> {{ 'SCI' | translate }}</span>
+                <span ng-show='(selectedsite.SITETYPE==2)' class="textpic"><img src='img/sitetype/2.svg'> {{ 'SPA' | translate }}</span>
+                <span ng-show='(selectedsite.SITETYPE==3)' class="textpic"><img src='img/sitetype/3.svg'> {{ 'SCISPA' | translate }}</span>   
+            </p>  
+            <a class='button button-full' href="#/app/site/siteabout/{{selectedsite.SITECODE}}"  ng-click="closeSiteDetailModal()" >{{ 'VWDT' | translate }}</a>
+
+        </div>
+    </ion-content>
+</ion-modal-view>

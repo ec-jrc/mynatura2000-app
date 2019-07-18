@@ -1,0 +1,35 @@
+<ion-nav-bar enable-menu-with-back-views="true" class="header home" align-title="center">
+    
+	<ion-nav-back-button side="left">
+	</ion-nav-back-button>
+	
+	<ion-nav-buttons side="left">
+    	<a ui-sref="app.home"><img width="31px" height="30px" src="img/home.png"/></a>&nbsp;&nbsp;&nbsp;
+		<a ui-sref="app.login"><img width="30px" height="30px" src="img/{{main.iconLogged}}"/></a>
+		<img ng-if="main.SSL === true" width="30px" height="30px" src="img/lock_RESTservices.png"/>
+	</ion-nav-buttons>
+
+    <ion-nav-title>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{main.title}}
+    </ion-nav-title>
+    
+    <ion-nav-buttons side="right">
+		<!-- <button class="button button-icon purple ion-wifi" ng-click='offlineinfo()' ng-hide='main.connected'></button> -->
+		<img src="img/offline.png" ng-click='offlineinfo()' ng-hide='main.connected' width="30px" height="30px" />
+		<button id="headerMenuButton" class="button button-icon ion-navicon-round" ng-click='appCtrl.isHeaderMenuOpen = !appCtrl.isHeaderMenuOpen'></button>
+    </ion-nav-buttons>
+
+</ion-nav-bar>
+
+<div id="headerMenu" ng-show="appCtrl.isHeaderMenuOpen === true" click-outside="appCtrl.isHeaderMenuOpen = false" outside-if-not="headerMenuButton">
+	<ul>
+		<li ng-click="openMenuModal('acknowledgement')">{{ 'ACKN' | translate }}</li>
+		<li ng-click="openMenuModal('disclaimer')">{{ 'DICL' | translate }}</li>
+		<li ng-click="openMenuModal('legalNotice')">{{ 'LGLN' | translate }}</li>
+		<li ng-click="openMenuModal('privacyStatement')">{{ 'PVCY' | translate }}</li>
+    <li ng-click="openMenuModal('language')">{{ 'LANGUAGE' | translate }}</li>
+	</ul>
+</div>
+
+<ion-nav-view name="mainContent">
+</ion-nav-view>

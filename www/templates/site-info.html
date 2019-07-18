@@ -1,0 +1,79 @@
+<ion-content  class="padding sitebg" scroll="true" overflow-scroll='false'>
+<div id='site-info'  class="has-header has-subheader">
+    
+    <div class="list">
+
+      <div class="item item-divider">
+        {{ 'INFN' | translate }}
+      </div>
+
+      <div class="item">
+        <strong>{{ 'NAME' | translate }}:</strong> {{info.SITENAME}}
+      </div>
+
+      <div class="item">
+        <strong>{{ 'TYPE' | translate }}:</strong>
+            <span ng-show='(info.SITETYPE==1)' class="textpic"><img src='img/sitetype/1.svg'> {{ 'SCI' | translate }}</span>
+            <span ng-show='(info.SITETYPE==2)' class="textpic"><img src='img/sitetype/2.svg'> {{ 'SPA' | translate }}</span>
+            <span ng-show='(info.SITETYPE==3)' class="textpic"><img src='img/sitetype/3.svg'> {{ 'SCISPA' | translate }}</span>
+      </div>
+
+      <div class="item">
+        <strong>{{ 'CDDE' | translate }}:</strong> {{info.SITECODE}}
+      </div>
+
+      <div class="item">
+        <strong>{{ 'CTRY' | translate }}:</strong> {{info.country_ext}}
+      </div>
+
+      <div class="item item-divider">
+        {{ 'LCTN' | translate }}
+      </div>
+
+      <div class="item">
+        <strong>{{ 'TOP_LEFT_COORD' | translate }}:</strong> Lat {{info.BBOX[0][1]}}, Long {{info.BBOX[0][0]}}
+      </div>
+
+      <div class="item">
+        <strong>{{ 'BOT_RIGHT_COORD' | translate }}:</strong> Lat {{info.BBOX[1][1]}}, Long {{info.BBOX[1][0]}}
+      </div>
+
+      <!-- 
+      <div class="item">
+        <strong>{{ 'LTTD' | translate }}:</strong> {{info.LATITUDE}}
+      </div>
+
+      <div class="item">
+        <strong>{{ 'LGTD' | translate }}:</strong> {{info.LONGITUDE}}
+      </div>
+        
+      <div class="item item-divider">
+        {{ 'ARRR' | translate }}
+      </div>
+      -->
+
+      <div class="item">
+        <strong>{{ 'ARTT' | translate }}:</strong> {{info.AREAHA}}
+      </div>
+        
+      <div class="item info item-icon-left">
+        <i class="icon ion-ios-information-outline"></i>
+        {{ 'N2WW1' | translate }}
+        <a class="linkLike" ng-click="openExternalLink('http://natura2000.eea.europa.eu/Natura2000/SDF.aspx?site='+info.SITECODE)">{{ 'N2WW2' | translate }}</a> {{ 'N2WW3' | translate }}.
+      </div>
+        
+      <div class="item item-divider">
+        {{ 'OVFB' | translate }}
+      </div>
+
+      <div class="item bigfeedback">
+        <div ng-show='(info.overall>0)' ><a href='#/app/site/sitefeedback/{{info.SITECODE}}'><img src="img/emoticon/1.svg" /></a><p>{{ 'POSI' | translate }}</p></div>
+        <div ng-show='(info.overall===0)'><a href='#/app/site/sitefeedback/{{info.SITECODE}}'><img src="img/emoticon/0.svg" /></a><p>{{ 'NEUT' | translate }}</p> </div>
+        <div ng-show='(info.overall<0)' ><a href='#/app/site/sitefeedback/{{info.SITECODE}}'><img src="img/emoticon/-1.svg"/></a><p>{{ 'NEGA' | translate }}</p></div>
+        <div ng-show='(info.overall===false)' ><a href='#/app/site/sitefeedback/{{info.SITECODE}}'><img src="img/emoticon/nofeed.svg"/></a><p>{{ 'NOFB' | translate }}</p></div>
+      </div>
+
+    </div>
+    
+</div>
+</ion-content>

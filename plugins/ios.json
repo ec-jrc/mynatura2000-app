@@ -1,0 +1,84 @@
+{
+  "prepare_queue": {
+    "installed": [],
+    "uninstalled": []
+  },
+  "config_munge": {
+    "files": {}
+  },
+  "installed_plugins": {
+    "com.telerik.plugins.nativepagetransitions": {
+      "PACKAGE_NAME": "eu.europa.publications.mynatura2000"
+    },
+    "cordova-plugin-android-permissions": {
+      "PACKAGE_NAME": "eu.europa.publications.mynatura2000"
+    },
+    "cordova-plugin-console": {
+      "PACKAGE_NAME": "eu.europa.publications.mynatura2000"
+    },
+    "cordova-plugin-file": {
+      "PACKAGE_NAME": "eu.europa.publications.mynatura2000"
+    },
+    "cordova-plugin-geolocation": {
+      "GEOLOCATION_USAGE_DESCRIPTION": " ",
+      "PACKAGE_NAME": "eu.europa.publications.mynatura2000"
+    },
+    "cordova-plugin-globalization": {
+      "PACKAGE_NAME": "eu.europa.publications.mynatura2000"
+    },
+    "cordova-plugin-inappbrowser": {
+      "PACKAGE_NAME": "eu.europa.publications.mynatura2000"
+    },
+    "cordova-plugin-network-information": {
+      "PACKAGE_NAME": "eu.europa.publications.mynatura2000"
+    },
+    "cordova-plugin-screen-orientation": {
+      "PACKAGE_NAME": "eu.europa.publications.mynatura2000"
+    },
+    "cordova-plugin-splashscreen": {
+      "PACKAGE_NAME": "eu.europa.publications.mynatura2000"
+    },
+    "cordova-plugin-statusbar": {
+      "PACKAGE_NAME": "eu.europa.publications.mynatura2000"
+    },
+    "cordova-plugin-whitelist": {
+      "PACKAGE_NAME": "eu.europa.publications.mynatura2000"
+    },
+    "cordova-plugin-winstore-jscompat": {
+      "PACKAGE_NAME": "eu.europa.publications.mynatura2000"
+    },
+    "cordova-sqlite-storage": {
+      "PACKAGE_NAME": "eu.europa.publications.mynatura2000"
+    },
+    "cordova.plugins.diagnostic": {
+      "PACKAGE_NAME": "eu.europa.publications.mynatura2000"
+    },
+    "eu.europa.ec.ecas": {
+      "ECAS_BASE_URL": "https://ecas.ec.europa.eu",
+      "REQUEST_FULL_USERDETAILS": "false",
+      "REQUEST_DGT": "true",
+      "ASSURANCE_LEVEL": "LOW",
+      "GROUP_FILTERS": "*",
+      "SERVICE_URL": "http://localhost/ios/myapp",
+      "PACKAGE_NAME": "eu.europa.publications.mynatura2000"
+    },
+    "ionic-plugin-keyboard": {
+      "PACKAGE_NAME": "eu.europa.publications.mynatura2000"
+    },
+    "cordova-plugin-compat": {
+      "PACKAGE_NAME": "eu.europa.publications.mynatura2000"
+    },
+    "cordova-plugin-camera": {
+      "CAMERA_USAGE_DESCRIPTION": " ",
+      "PHOTOLIBRARY_USAGE_DESCRIPTION": " ",
+      "PACKAGE_NAME": "eu.europa.publications.mynatura2000"
+    },
+    "cordova-plugin-device": {
+      "PACKAGE_NAME": "eu.europa.publications.mynatura2000"
+    },
+    "cordova-plugin-dialogs": {
+      "PACKAGE_NAME": "eu.europa.publications.mynatura2000"
+    }
+  },
+  "dependent_plugins": {}
+}

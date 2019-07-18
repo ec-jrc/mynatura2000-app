@@ -1,0 +1,108 @@
+<div class="bar bar-subheader nopadding">
+    <div class="button-bar">
+        <a class="button bg-pink" ng-show="id=='new'" ng-click='savedraft()'>{{ 'SVDF' | translate }}</a>
+        <a class="button bg-pink" ng-show="id!='new'" ng-click='updatedraft()'>{{ 'UPDF' | translate }}</a>
+        <a class="button bg-pinkdark" ng-click='send()'>{{ 'SNND' | translate }}</a>
+    </div>
+</div>
+<!-- workaround to make the back button visible on those page (ionic hides it) -->
+<style>
+.back-button {
+    display: block !important;
+}
+</style>
+<ion-view id="report-observation">
+    <ion-content scroll="true" overflow-scroll="false" padding="false" class="has-subheader">
+        <form novalidate class="simple-form">
+            <div class="list">
+                <div class="item item-divider item-icon-left">
+                    <i class="icon ion-ios-location"></i> {{ 'POSN' | translate }}
+                </div>
+                <div class="row" ng-hide="main.gotpos || main.sitepos || forceshowmap" ng-click="selectfrommap()">
+                    <h3>{{ 'NOLC' | translate }}<br> <small>{{ 'SFRM' | translate }}</small> </h3>
+                </div>
+                <div class="row" ng-show="main.gotpos || main.sitepos || forceshowmap">
+                    <div class="col-50">
+                        <label class="item item-input item-stacked-label">
+                            <span class="input-label">{{ 'LTTD' | translate }}</span>
+                            <!-- <input type="number" ng-model='model.lat' ng-change='maprefresh()'> -->
+                            <input type="number" ng-model='model.lat'>
+                        </label>
+                        <label class="item item-input item-stacked-label">
+                            <span class="input-label">{{ 'LGTD' | translate }}</span>
+                           <!--  <input type="number" ng-model='model.long' ng-change='maprefresh()'> -->
+                           <input type="number" ng-model='model.long'>
+                        </label>
+                    </div>
+                    <div id='mapgrid' class="col-50">
+                    	<!-- tiles="tiles" -->
+                        <leaflet id='latlongmap' layers="layers" center="center" defaults="defaults" width='100%'>
+                        </leaflet>
+                        <div id="mapBtnControll">
+                          <button id='bigmapbutton' class="button button-small button-stable icon ion-ios-search-strong" ng-click='openBigMap()'></button>
+                          <br/>
+                          <br/>
+                          <br/>
+                          <br/>
+                          <br/>
+                          <button id='centerpositionbutton' class="button button-small button-stable icon ion-pinpoint" ng-click='centerCurrentPositions()'></button>
+                        </div>  
+                    </div>
+                </div>
+                <div class="item item-divider item-icon-left">
+                    <i class="icon ion-android-calendar"></i> {{ 'DTTE' | translate }}
+                </div>
+                <label class="item item-input item-stacked-label">
+                    <input type="date" ng-model='model.date'>
+                </label>
+                <div class="item item-divider item-icon-left">
+                    <i class="icon ion-android-textsms"></i> {{ 'COMNT' | translate }}
+                </div>
+                <label class="item item-input item-stacked-label">
+                    <textarea placeholder="{{ 'COMNT' | translate }}" rows="8" ng-model='model.comment'></textarea>
+                </label>
+                <div class="item item-divider item-icon-left">
+                    <i class="icon ion-person"></i> {{ 'IDNT' | translate }}
+                </div>
+                <label class="item item-input item-select">
+                    <div class="input-label">
+                        {{ 'ANNM' | translate }}
+                    </div>
+                    <select ng-model='model.anonymous'>
+                        <option value="true">{{ 'TRUE' | translate }}</option>
+                        <option value="false">{{ 'FALSE' | translate }}</option>
+                    </select>
+                </label>
+                <div class="item item-divider item-icon-left">
+                    <i class="icon ion-camera"></i> {{ 'PICT' | translate }} {{ 'MAXPIC' | translate }} <label class="mandatoryLabel">*</label>
+                </div>
+                <label class="item item-input item-select">
+                    <div class="input-label">
+                        {{ 'PCTP' | translate }}
+                    </div>
+                    <select ng-model='model.picturetype'>
+                        <option value="1">{{ 'LSCA' | translate }}</option>
+                        <option value="2">{{ 'SPCS' | translate }}</option>
+                        <option value="3">{{ 'THRT' | translate }}</option>
+                    </select>
+                </label>
+                <!-- <ion-checkbox class="item-checkbox-right" [(ngModel)]="model.anonymous">{{model.anonymous}} {{ 'ANNM' | translate }}</ion-checkbox>
+                <ion-checkbox class="item-checkbox-right" ng-checked='model.anonymous' ng-model='model.anonymous'>{{ 'ANNM' | translate }}</ion-checkbox> -->
+                <div class='item picsitem'>
+                    <div class="button-bar" ng-show="model.pictures.length < 6">
+                        <a class="button" ng-click='addnewpicture(1)'>{{ 'PCAM' | translate }}<br><span class="ion-ios-camera"></span></a>
+                        <a class="button" ng-click='addnewpicture(0)'>{{ 'PACH' | translate }}<br><span class="ion-images"></span></a>
+                    </div>
+					<div class="row"> <!-- picsgrid  --> <!--  -->
+	                    <div class="col-45 picthumb" ng-repeat='(key, picture) in model.pictures track by key' style="background-image:url('{{picture}}')">
+	                        <span class="delete" ng-click="removepic(key)"> x</span>
+	                    </div>
+	                </div>
+                </div>
+                <label class="item item-input item-stacked-label">
+                    {{ 'MANDAT1' | translate }} <label class="mandatoryLabel">*</label> {{ 'MANDAT2' | translate }}
+                </label>
+            </div>
+        </form>
+    </ion-content>
+</ion-view>

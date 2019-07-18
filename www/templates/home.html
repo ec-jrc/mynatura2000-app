@@ -1,0 +1,29 @@
+<ion-view id="home" hide-back-button="true">
+    
+  <ion-content class="padding" scroll="true" overflow-scroll='true'>
+    <section class="home-container">
+        
+          <a ui-sref="app.list" class="main-menu__button main-menu__button_globe"><img ng-src="img/home/globe_{{selectedLanguage.language.idL}}.svg"></a>
+        
+          <a ui-sref="app.map" class="main-menu__button main-menu__button_map"><img ng-src="img/home/map_{{selectedLanguage.language.idL}}.svg"></a>
+        
+          <a ui-sref="app.report" class="main-menu__button main-menu__button_report"><img ng-src="img/home/report_{{selectedLanguage.language.idL}}.svg"></a>
+       
+          <div class='block'></div>
+          
+          <a ui-sref="{{main.myReportsScreen}}" class="main-menu__button main-menu__button_records"><img ng-src="img/home/records_{{selectedLanguage.language.idL}}.svg"></a>
+
+          <a ui-sref="app.login" class="main-menu__button main-menu__button_login"><img ng-src="img/home/login_{{selectedLanguage.language.idL}}.svg"></a>
+        
+          <a ui-sref="app.about" class="main-menu__button main-menu__button_about"><img ng-src="img/home/about_{{selectedLanguage.language.idL}}.svg"></a>
+        
+        <style>
+            .back-button {
+                     display: none !important;
+                 }
+        </style>
+      
+    </section>
+  </ion-content>
+    
+</ion-view>

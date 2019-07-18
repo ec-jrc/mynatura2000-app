@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+  <dict>
+    <key>CFBundleDevelopmentRegion</key>
+    <string>English</string>
+    <key>CFBundleDisplayName</key>
+    <string>${PRODUCT_NAME}</string>
+    <key>CFBundleExecutable</key>
+    <string>${EXECUTABLE_NAME}</string>
+    <key>CFBundleIcons</key>
+    <dict/>
+    <key>CFBundleIcons~ipad</key>
+    <dict/>
+    <key>CFBundleIdentifier</key>
+    <string>eu.europa.publications.mynatura2000</string>
+    <key>CFBundleInfoDictionaryVersion</key>
+    <string>6.0</string>
+    <key>CFBundleLocalizations</key>
+    <array>
+      <string>en</string>
+      <string>fr</string>
+      <string>it</string>
+      <string>de</string>
+    </array>
+    <key>CFBundleName</key>
+    <string>${PRODUCT_NAME}</string>
+    <key>CFBundlePackageType</key>
+    <string>APPL</string>
+    <key>CFBundleShortVersionString</key>
+    <string>2.0.0</string>
+    <key>CFBundleSignature</key>
+    <string>????</string>
+    <key>CFBundleVersion</key>
+    <string>2.0.0</string>
+    <key>ECASMobileSDK</key>
+    <dict>
+      <key>AssuranceLevel</key>
+      <string>HIGH</string>
+      <key>ECASBaseURL</key>
+      <string>https://webgate.ec.europa.eu</string>
+      <key>GroupFilters</key>
+      <string>*</string>
+      <key>ServiceURL</key>
+      <string>http://localhost/ios/myapp</string>
+      <key>requestDesktopGrantingTicket</key>
+      <string>REQUEST_DGT</string>
+      <key>requestFullUserDetails</key>
+      <string>false</string>
+    </dict>
+    <key>LSApplicationCategoryType</key>
+    <string/>
+    <key>LSRequiresIPhoneOS</key>
+    <true/>
+    <key>NSAppTransportSecurity</key>
+    <dict>
+      <key>NSExceptionDomains</key>
+      <dict>
+        <key>10.20.0.15</key>
+        <dict>
+          <key>NSExceptionAllowsInsecureHTTPLoads</key>
+          <true/>
+        </dict>
+      </dict>
+    </dict>
+    <key>NSBluetoothPeripheralUsageDescription</key>
+    <string>This app requires bluetooth access to function properly.</string>
+    <key>NSCalendarsUsageDescription</key>
+    <string>This app requires calendar access to function properly.</string>
+    <key>NSCameraUsageDescription</key>
+    <string>This app requires camera access to shoot new images for every observation sent by the user.</string>
+    <key>NSContactsUsageDescription</key>
+    <string>This app requires contacts access to function properly.</string>
+    <key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+    <string>Your current location will be displayed on the map and used for nearby search result and to geolocalize user's observations and feedbacks.</string>
+    <key>NSLocationAlwaysUsageDescription</key>
+    <string>Your current location will be displayed on the map and used for nearby search result and to geolocalize user's observations and feedbacks.</string>
+    <key>NSLocationWhenInUseUsageDescription</key>
+    <string>Your current location will be displayed on the map and used for nearby search result and to geolocalize user's observations and feedbacks.</string>
+    <key>NSMainNibFile</key>
+    <string/>
+    <key>NSMainNibFile~ipad</key>
+    <string/>
+    <key>NSMicrophoneUsageDescription</key>
+    <string>This app requires microphone access to function properly.</string>
+    <key>NSMotionUsageDescription</key>
+    <string>This app requires motion detection access to function properly.</string>
+    <key>NSPhotoLibraryAddUsageDescription</key>
+    <string>This app requires photo library access to select images for every observation sent by the user.</string>
+    <key>NSPhotoLibraryUsageDescription</key>
+    <string>This app requires photo library access to select images for every observation sent by the user.</string>
+    <key>NSRemindersUsageDescription</key>
+    <string>This app requires reminders access to function properly.</string>
+    <key>UIRequiresFullScreen</key>
+    <true/>
+  </dict>
+</plist>

@@ -1,0 +1,14 @@
+<div id='site-pics'>
+	<p ng-if='pics[0] != no_picture && main.connected' class="labelRandomImages">{{ 'RANDOMPICS' | translate }}</p>
+    <ion-slide-box ng-if='pics.length > 0' >
+      <ion-slide ng-repeat='(key, pic) in pics track by $index'>
+        <div ng-if='main.connected' class='gallerypic' style="background-image:url('{{pic}}')" ></div>
+        <div ng-if='selectedLanguage.language.idL == "en" && main.connected == false' class='gallerypic' style="background-image:url('img/noimg3_en.svg')" ></div>
+        <div ng-if='selectedLanguage.language.idL == "it" && main.connected == false' class='gallerypic' style="background-image:url('img/noimg3_it.svg')" ></div>
+        <div ng-if='selectedLanguage.language.idL == "de" && main.connected == false' class='gallerypic' style="background-image:url('img/noimg3_de.svg')" ></div>
+        <div ng-if='selectedLanguage.language.idL == "fr" && main.connected == false' class='gallerypic' style="background-image:url('img/noimg3_fr.svg')" ></div>
+        <div ng-if='selectedLanguage.language.idL == "hu" && main.connected == false' class='gallerypic' style="background-image:url('img/noimg3_hu.svg')" ></div>
+        <div ng-if='selectedLanguage.language.idL == "ro" && main.connected == false' class='gallerypic' style="background-image:url('img/noimg3_ro.svg')" ></div>
+      </ion-slide>
+    </ion-slide-box>
+</div>

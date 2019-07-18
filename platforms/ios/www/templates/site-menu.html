@@ -1,0 +1,48 @@
+<div class="bar bar-subheader subheader22">
+<!-- <div id="tototo has-header" style="display: block; width: 100%;"> -->
+    <!-- <div class="button-bar">
+            <a class="button icon ion-ios-information-outline" ng-class="{'active': sitemenu.section == 1}"
+               href='#/app/site/siteinfo/{{sitemenu.id}}'></a>
+            <a class="button icon ion-ios-world" ng-class="{'active': sitemenu.section == 2}"
+               href='#/app/site/sitemap/{{sitemenu.id}}'></a>
+            <a class="button icon ion-ios-plus-outline" ng-class="{'active': sitemenu.section == 3}"
+               href='#/app/site/sitereport/{{sitemenu.id}}'></a>
+            <a class="button icon ion-ios-camera-outline" ng-class="{'active': sitemenu.section == 4}"
+               href='#/app/site/siteabout/{{sitemenu.id}}'></a>
+            <a class="button icon ion-happy-outline" ng-class="{'active': sitemenu.section == 5}"
+               href='#/app/site/sitefeedback/{{sitemenu.id}}'></a>
+  ng-style="bar.barfix && {'top':'-47px'}"
+    </div> -->
+    <div id="site-menu-bar" class="bar bar-subheader specie-tab-navigation row">
+      <a class="col col-20" href='#/app/site/siteinfo/{{sitemenu.id}}'>
+          <img ng-if="sitemenu.section != 1" ng-src="img/information2.svg" alt="photos">
+          <img ng-if="sitemenu.section == 1" ng-src="img/information2-active.svg" alt="photos">
+      </a>
+      <a class="col col-20" href='#/app/site/sitemap/{{sitemenu.id}}'>
+          <img ng-if="sitemenu.section != 2" ng-src="img/world.svg" alt="information">
+          <img ng-if="sitemenu.section == 2" ng-src="img/world-active.svg" alt="information">
+      </a>
+      <a class="col col-20" href='#/app/site/siteabout/{{sitemenu.id}}'>
+          <img ng-if="sitemenu.section != 4" ng-src="img/camera.svg" alt="add sob">
+          <img ng-if="sitemenu.section == 4" ng-src="img/camera-active.svg" alt="add sob">
+      </a>
+      <a class="col col-20" href='#/app/site/sitefeedback/{{sitemenu.id}}'>
+          <img ng-if="sitemenu.section != 5" ng-src="img/emoticon.svg" alt="add sob">
+          <img ng-if="sitemenu.section == 5" ng-src="img/emoticon-active.svg" alt="add sob">
+      </a>
+      <a class="col col-20" href='#/app/site/sitereport/{{sitemenu.id}}'>
+          <img ng-if="sitemenu.section != 3" ng-src="img/add.svg" alt="map">
+          <img ng-if="sitemenu.section == 3" ng-src="img/add-active.svg" alt="map">
+      </a>
+    </div>
+</div>
+<ion-nav-view name="siteContent" class="has-header has-subheader fixEmptySpace" style="position: fixed!important">
+</ion-nav-view>
+
+
+
+<style>
+    .back-button {
+             display: block !important;
+         }
+</style>

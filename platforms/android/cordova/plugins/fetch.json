@@ -1,0 +1,11 @@
+{
+    "eu.europa.ec.ecas": {
+        "source": {
+            "type": "git",
+            "url": "https://webgate.ec.europa.eu/CITnet/stash/scm/ecas/ecas-mobile-sdk-cordova.git",
+            "subdir": "."
+        },
+        "is_top_level": true,
+        "variables": {}
+    }
+}

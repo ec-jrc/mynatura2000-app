@@ -1,0 +1,15 @@
+<ion-modal-view class="sidemenu-modal">
+    <ion-header-bar>
+        <h1 class="title">{{ 'OBSR' | translate }}</h1>
+        <div class="buttons">
+            <button class="button button-clear" ng-click="closeContrPhotoSlider()"><span class="ion-close-circled"> {{ 'CLOS' | translate }}</span></button>
+        </div>
+    </ion-header-bar>
+    <ion-content>
+		<div id="specie_pictures">
+			<div class="photoBrowserIndicator" data-tap-disabled="true">
+				<span ng-repeat="photo in selectedfeedback.properties.Image track by $index" ng-class="{'active': speciesCtrl.activeIndex == $index}">●</span>
+			</div>
+		</div>
+    </ion-content>
+</ion-modal-view>

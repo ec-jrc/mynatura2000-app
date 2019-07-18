@@ -1,0 +1,12 @@
+{
+    "jscodehints.detectedExclusions": [
+        "C:/Users/fusmau/Desktop/nat2000/www/lib/ionic/js/ionic-angular.js",
+        "C:/Users/fusmau/Desktop/nat2000/www/lib/ionic/js/ionic-angular.min.js",
+        "C:/Users/fusmau/Desktop/nat2000/www/lib/angular-ui-router/src/viewScroll.js",
+        "C:/Users/fusmau/Desktop/nat2000/www/lib/angular-ui-router/src/view.js",
+        "C:/Users/fusmau/Desktop/nat2000/www/lib/ionic/js/ionic.min.js",
+        "C:/Users/fusmau/Desktop/nat2000/www/lib/esri-leaflet/profiles/production.js",
+        "C:/Users/fusmau/Desktop/nat2000/www/js/extra_data.js",
+        "C:/Users/fusmau/Desktop/nat2000/www/lib/ionic/js/ionic.js"
+    ]
+}

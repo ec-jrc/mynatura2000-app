@@ -1,0 +1,125 @@
+<div class="bar bar-subheader nopadding">
+    <div class="button-bar">
+      <a class="button bg-gold" href="#/app/myreports">{{ 'DRFT' | translate }}</a>
+      <a class="button bg-brown" style="font-weight: bold; border: 1px solid #000000;">{{ 'RPTS' | translate }}</a>
+    </div>
+</div>
+
+<!-- workaround to make the back button visible on those page (ionic hides it) -->
+     <style>
+         .back-button {
+             display: block !important;
+         }
+     </style>
+
+<ion-view id="mysentreports" class='standardbg'>
+    
+    
+    <ion-content scroll="true" overflow-scroll="true" padding="false" class="has-subheader">
+        
+        
+        <div class="card" ng-show="results.length==0 && main.connected==true">
+          <div class="item item-text-wrap">
+            {{ 'RPNO' | translate }}<br/>
+            <a ui-sref="app.report" class="main-menu__button">{{ 'DRFNO3' | translate }} </a>
+          </div>
+        </div>
+        <div class="card" ng-show="main.connected==false">
+          <div class="item item-text-wrap">
+            {{ 'OFFLINE' | translate }}
+          </div>
+        </div>
+        
+        
+        
+        <div ng-show="results.length>0">
+            
+                   
+            
+         <ion-list>
+                            
+         <label class="item item-input item-select">
+            <div class="input-label">
+              {{ 'TORP' | translate }}
+            </div>
+            <select ng-model='showfilter'>
+              <option value="0" selected>{{ 'ALLL' | translate }}</option>
+              <option value="1" >{{ 'OVFB' | translate }}</option>
+              <option value="2" >{{ 'RPAL' | translate }}</option>
+              <option value="3" >{{ 'RPLS' | translate }}</option>
+              <option value="4" >{{ 'RPSP' | translate }}</option>
+              <option value="5" >{{ 'RPTST' | translate }}</option>
+            </select>
+         </label>
+        
+         <label class="item item-input item-select">
+            <div class="input-label">
+              {{ 'STSS' | translate }}
+            </div>
+            <select ng-model='statusfilter'>
+              <option value="0" selected>{{ 'ALLL' | translate }}</option>
+              <option value="1" >{{ 'APRD' | translate }}</option>
+              <option value="2" >{{ 'PNDG' | translate }}</option>
+            </select>
+         </label>
+                
+    <div ng-show="pages>1" class="button-bar">
+      <a ng-show="(main.pagingEnd/20)>1" class="button bg-brown" style="font-weight: bold; border: 1px solid #000000;" href="#/app/mysentreports" ng-click="decreasePaging(20)" ><i class="icon ion-arrow-left-a pagebuttons-icon"></i></a>
+      <a ng-show="(main.pagingEnd/20)==1" class="button bg-gold" style="font-weight: bold; border: 1px solid #000000;" href="#/app/mysentreports"><i class="icon ion-arrow-left-a pagebuttons-icon"></i></a>
+      <div class="button">&nbsp;&nbsp;&nbsp;{{main.pagingEnd/20}}/{{pages}}&nbsp;&nbsp;&nbsp;</div>
+      <a ng-show="(main.pagingEnd/20)<pages" class="button bg-brown" style="font-weight: bold; border: 1px solid #000000;" href="#/app/mysentreports" ng-click="increasePaging(20)" ><i class="icon ion-arrow-right-a pagebuttons-icon"></i></a>
+      <a ng-show="(main.pagingEnd/20)==pages" class="button bg-gold" style="font-weight: bold; border: 1px solid #000000;" href="#/app/mysentreports"><i class="icon ion-arrow-right-a pagebuttons-icon"></i></a>
+    </div>
+                
+                <div ng-repeat="item in results | filterOnlineReps:showfilter:statusfilter | orderBy:'-createdAt'" class="item item-button-right" item-height="80px" item-width="100%" ng-click="clickdetails(item.type, item._id)">
+                  
+                    <img style="float: left; margin: 0px 10px 0px 0px;" ng-show="item.type==0" src="img/emoticon/{{item.properties.EmoticonValue}}.svg" height="45px"/>
+                    <img style="float: left; margin: 0px 10px 0px 0px;" ng-show="item.type==1" src="{{item.properties.Image[0]}}" height="45px"/>
+                    <h2  ng-show="item.type==0">{{ 'FDBK' | translate }}</h2>
+                    <h2  ng-show="item.type==1">
+                        <span ng-show="item.picturetype==1" >{{ 'LSCA' | translate }}</span>
+                        <span ng-show="item.picturetype==2" >{{ 'SPCS' | translate }}</span>
+                        <span ng-show="item.picturetype==3" >{{ 'THRT' | translate }}</span>
+                        <span ng-hide="item.picturetype==1 || item.picturetype==2 || item.picturetype==3" >{{ 'OBSR' | translate }}</span>
+                    </h2>
+                    
+                    <p>{{item.createdAt | date:"dd-MM-yyyy"}} &#8226;
+                        <!-- this should change when they provide the status in backend -->
+                        <span class='balanced' ng-show='item.properties.Status=="approved"'>{{ 'APRD' | translate }}</span>
+                        <span class='assertive' ng-hide='item.properties.Status=="approved"'>{{ 'PNDG' | translate }}</span>
+                    </p>
+                    
+                    <!-- 
+                    <div class="buttons">
+                        <button ng-show="item.type==0" class="button icon ion-eye" ng-click="showfeedback(item._id)"></button> //feedback
+                        <button ng-show="item.type==1" class="button icon ion-eye" ng-click="showreport(item._id)"></button> //report
+                    </div>
+                    -->
+                </div>
+                
+                
+                
+            </ion-list>
+    <div ng-show="pages>1" class="button-bar">
+      <a ng-show="(main.pagingEnd/20)>1" class="button bg-brown" style="font-weight: bold; border: 1px solid #000000;" href="#/app/mysentreports" ng-click="decreasePaging(20)" ><i class="icon ion-arrow-left-a pagebuttons-icon"></i></a>
+      <a ng-show="(main.pagingEnd/20)==1" class="button bg-gold" style="font-weight: bold; border: 1px solid #000000;" href="#/app/mysentreports"><i class="icon ion-arrow-left-a pagebuttons-icon"></i></a>
+      <div class="button">&nbsp;&nbsp;&nbsp;{{main.pagingEnd/20}}/{{pages}}&nbsp;&nbsp;&nbsp;</div>
+      <a ng-show="(main.pagingEnd/20)<pages" class="button bg-brown" style="font-weight: bold; border: 1px solid #000000;" href="#/app/mysentreports" ng-click="increasePaging(20)" ><i class="icon ion-arrow-right-a pagebuttons-icon"></i></a>
+      <a ng-show="(main.pagingEnd/20)==pages" class="button bg-gold" style="font-weight: bold; border: 1px solid #000000;" href="#/app/mysentreports"><i class="icon ion-arrow-right-a pagebuttons-icon"></i></a>
+    </div>
+            
+        </div>
+        
+    </ion-content>
+    
+    
+</ion-view>
+
+<!-- 
+<div class="bar bar-subfootermore nopadding">
+    <div class="button-bar">
+      <a class="button bg-pink" href="#/app/myreports">{{ 'DRFT' | translate }}</a>
+      <a class="button bg-amber" style="font-weight: bold; border: 1px solid #000000;">{{ 'RPTS' | translate }}</a>
+    </div>
+</div>
+-->

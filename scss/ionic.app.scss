@@ -1,0 +1,857 @@
+/*
+To customize the look and feel of Ionic, you can override the variables
+in ionic's _variables.scss file.
+
+For example, you might change some of the default colors:
+
+$light:                            $color-white  !default;
+$stable:                          #f8f8f8 !default;
+$positive:                        #387ef5 !default;
+$calm:                            #11c1f3 !default;
+$balanced:                        #33cd5f !default;
+$energized:                       #ffc900 !default;
+$assertive:                       #ef473a !default;
+$royal:                           #886aea !default;
+$dark:                            #444 !default;
+*/
+
+/*test */
+/* test 2 */
+/* test 5 */
+
+
+
+
+// The path for our ionicons font files, relative to the built CSS in www/css
+$ionicons-font-path: "../lib/ionic/fonts" !default;
+
+// Include all of Ionic
+@import "www/lib/ionic/scss/ionic";
+
+
+
+
+
+
+
+/* Declaring app colors */
+$color-purple: #623949;
+$color-amber: #fbb52a;
+$color-pink: #d4a4a2;
+$color-gray: #6f7b7e;
+$color-brown: #543e17;
+$color-green: #786a2a;
+$color-white:  #ffffff;
+$color-black: #27393D;
+
+.bg-amber {
+    background-color: $color-amber;
+}
+
+
+.bg-pink {
+    background-color: $color-pink;
+}
+
+.purple {
+    color: #B00 !important;
+}
+
+
+
+
+
+/*
+* Fonts
+* --------------------------------------------------
+*/
+
+$ECSquareSansPro-font-path: "../lib/fonts" !default;
+@font-face {
+    font-family: 'ECSquareSansPro';
+    src: url('#{$ECSquareSansPro-font-path}/ECSquareSansPro.eot');
+    src: url('#{$ECSquareSansPro-font-path}/ECSquareSansPro.eot?#iefix') format('embedded-opentype'),
+    url('#{$ECSquareSansPro-font-path}/ECSquareSansPro.woff2') format('woff2'),
+    url('#{$ECSquareSansPro-font-path}/ECSquareSansPro.woff') format('woff'),
+    url('#{$ECSquareSansPro-font-path}/ECSquareSansPro.ttf') format('truetype'),
+    url('#{$ECSquareSansPro-font-path}/ECSquareSansPro.svg#ECSquareSansPro') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6,
+input,
+button,
+select,
+textarea,
+.ionic-body,
+.tab-item {
+    font-family: "ECSquareSansPro" !important;
+}
+
+
+
+
+/* Corrections */
+.bar-subheader {
+    top: 44px;
+    height: 44px;
+}
+
+.subheader22 {
+    top: 0 !important;
+}
+
+.has-subheader {
+    top: 88px;
+    padding-bottom: 88px;
+}
+
+.spinner svg {
+  width: 28px;
+  height: 28px;
+}
+
+.standardbg {
+    background-color: $color-brown;
+    background-image: url("../img/bg.svg");
+	background-size: 100%;
+	background-repeat: no-repeat;
+	background-position: 50% 110%;
+}
+
+.nopadding {
+    padding: 0 !important;
+}
+
+.nopadding * {
+    border-radius: 0 !important; 
+}
+
+/*
+* Home
+* --------------------------------------------------
+*/
+#home{
+    // ion-header-bar{
+    //     div.title{
+    //         overflow: visible;
+    //         @media screen and (min-width: 330px) {
+    //             text-align: center;
+    //             margin-right: 0;
+    //             margin-left: 20px;
+    //         }
+    //     }
+    // }
+ 	ion-content{
+ 		background-color: #ff8100;
+ 		background-image: url("../img/bg.svg");
+ 		background-size: cover;
+ 		background-repeat: no-repeat;
+ 		background-position: bottom;
+ 		
+        section.home-container{
+            height: 100%;
+            width: 100%;
+            margin: auto;
+            
+            .main-menu__button {
+                display:block;
+                margin:5%;
+                width: 23.33%;
+                max-height: 30%;
+                text-align: center;
+                float:left;
+                @media screen and (max-width: 767px) {
+                    width: 40%;
+                    max-height: 23.33%;
+                }
+                
+                img {
+                    max-width: 100%;
+                    max-height: 100%;
+                }
+            }
+
+
+
+
+            
+            
+            }
+                
+        }
+
+
+}
+
+
+/*
+* About
+* --------------------------------------------------
+*/
+
+#about{
+	.col{
+		max-width: none!important;
+	}
+    background-color: $color-brown;
+    background-image: url("../img/bg.svg");
+	background-size: 100%;
+	background-repeat: no-repeat;
+	background-position: 50% 110%;
+    ion-content{
+        //height: 100%;
+        font-size: 20px;
+        color: $color-white;
+     	a{
+     		color: $color-amber;
+			text-decoration: none;
+     	}
+        div.icon{
+            img{ width: 80%; max-width: 80px;}
+            @media screen and (max-width: 735px) {
+               display: none;
+            }
+        }
+        div.text{
+            .title{
+                text-align: center;
+            }
+            img{ 
+                width: 30px;
+                vertical-align: bottom;
+                @media screen and (min-width: 735px) {
+                   display: none;
+                }
+            }
+        }
+        div.aboutText, div.contact, div.links{
+        	background-color: $color-brown;
+        	margin-bottom: 50px;
+        	padding-top: 10px;
+        }
+        div.aboutText{
+        	ul{
+        		list-style-type: square;
+        		padding-left: 25px;
+        		li{
+        			margin-bottom: 1em;
+        		}
+        	}
+        }
+        div.contact{text-align: center;}
+        div.links{
+        	ol{
+        		list-style-type: decimal;
+        		padding-left: 25px;
+        	}
+        }
+    }
+    .bigicon{
+        img{
+            max-width: 50%;
+        }
+    }
+}
+
+/*
+* Sites List
+* --------------------------------------------------
+*/
+#list{
+    .bar-footer{
+        background-color: $color-gray;
+        height:auto;
+        p img {
+            height: 10px;
+        }
+    }
+    ion-content .scroll {
+        padding-bottom: 150px; /* avoids overlapping */
+    }
+    .filterdiv {
+        background-color: $color-gray;
+        .expandedsearch {
+            label, select, .item {
+                /* items in expandedsearch should be gray with white text */
+                border: none;
+                background-color: $color-gray;
+                color: $color-white;
+            }
+            select:active, select:hover {
+                color: $color-black;
+            }
+        }
+        
+    }
+    .list {
+        width:100%;
+        .collection-repeat-container {
+            width: 100%;
+            .item {
+                width: 100% !important; /* this tries to solve a WP error */
+                min-height: 70px;
+                height:70px;
+                display:block;
+                clear:both;
+            }
+        }
+    }
+    
+}
+
+.loadbar {
+    height:3px;
+    transition:1s;
+    border-radius: 3px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+/*
+* Sites map (general)
+* -----------------------------------
+*/
+ion-view#map{
+    .mapInfoFooter{
+        position: absolute;
+        z-index: 9999;
+        width: 100%;
+        min-height: 25px;
+        background-color: #613848;
+        bottom: 0;
+        text-align: center;
+        color: #ffffff;
+        font-weight: bold;
+        padding-right: 5px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        border-top: 2px solid #f6aa20;
+        span.siteTitle{
+            padding-left: 55px; //width of arrow picture to center all
+            font-size: 1.3em;
+            display: inline-block;
+            text-align: center;
+            width: calc(100% - 90px);
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        a.button{
+            margin-top: 5px;
+            line-height: 30px;
+            min-height: 10px;
+        }
+        img.arrow{
+            //display: block;
+            //position: relative;
+            display: inline-block;
+            float: right;
+            height: 25px;
+            margin-right: 10px;
+            margin-bottom: 5px;
+            //left: calc(100% - 30px);
+        }
+        div.additionnalInfo{
+            //min-height: 68px;
+            height: 80px;
+            // span.emptySelect{
+            //     font-size: 20px;
+            //     padding: 0;
+            // }
+            span.general{
+                color: #f6aa20;
+            }
+            span{
+                padding: 0;
+            }
+            img{
+                height: 25px;
+                margin: auto;
+                vertical-align: middle;
+            }
+        }
+    }
+}
+
+/*
+* Sites
+* -----------------------------------
+*/
+
+
+#site-menu-bar{
+
+    border-bottom: 1px solid #999999;;
+    height: 45px;
+    // position: fixed;
+    a {
+        border-right: 1px solid #999999;;
+        text-align: center;
+        padding: 0;
+        &:last-of-type {
+            border-right: none;
+        }
+    }
+    a.col{
+        height: 35px;
+        img{ height: 35px;}
+    }
+
+}
+
+/*
+* Pics
+*/
+
+#site-pics {
+    width:100%;
+    height:100%;
+    position:relative;
+    .slider{
+        width:100%;
+        height:100%;
+        .gallerypic {
+            width:100%;
+            height:100%;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+                
+        }
+    }
+}
+
+
+/*
+* Info
+*/
+
+#site-info {
+    margin-bottom: 100px; /* gives some 'breath' to the content */
+    .item {
+        overflow: auto;
+        white-space: normal;
+    }
+    .info {
+        font-size: small;
+        a {
+            color: $color-amber;
+            font-size: medium;
+        }
+    }
+
+}
+
+/*
+* Feedback
+*/
+
+#site-feedback {
+    margin-bottom: 100px; /* gives some 'breath' to the content */
+}
+    
+/*
+* Map
+*/
+
+#site-map, #site-map1, #site-map2 {
+    width:100%;
+    height:100%;
+    position:relative;
+    #sitemap {
+        height:100%;
+        width:100%;
+        background-color: #000101;
+    }
+}
+
+     
+/*
+* Create an Observation
+* -----------------------------------
+*/
+#report-observation {
+    .picsitem {
+        overflow: auto;
+        white-space: normal;
+    }
+
+    #mapgrid {
+            position:relative;
+            #mapBtnControll{
+                position:absolute;
+                top:3px;
+                left:3px;
+                z-index:1000;
+                #bigmapbutton{
+                    position:relative;
+                    // position:absolute;
+                    // top:3px;
+                    // left:3px;
+                    // z-index:1000;
+                }
+                #centerpositionbutton{
+                    position:relative;
+
+                }
+            }
+        }
+
+}
+
+
+#latlongmap {
+                    width: 100%;
+                    height: 100%;
+                    min-height: 145px;
+                    .leaflet-control-container {
+                        display:none;
+                    }
+                    &:before {
+                        content: "x";
+                        color: crimson;
+                        font-weight: 800;
+                        font-size: 18px;
+                        margin-left: -9px;
+                        margin-top: -9px;
+                        position: absolute;
+                        left: 50%;
+                        top:50%;
+                        z-index: 10000;
+                    }
+
+            }
+#latlongbigmap {
+    @extend #latlongmap;
+}
+#latlongbigmap {
+    position:absolute !important;
+    top:0;
+    left:0;
+    bottom:0;
+    right:0;
+}
+/*
+* General & common style
+* -----------------------------------
+*/
+
+.leaflet-control-layers-base, .leaflet-control-layers-separator {
+    display:none; /* hide base layers in maps */
+}
+
+.bigfeedback {
+    margin-bottom: 15px;
+    img {
+        width: 50%;
+        margin: auto;
+        max-width: 150px;
+        display: block;
+    }
+    p {
+        color: $color-gray;
+        font-size: large;
+        text-align: center;
+        font-variant: small-caps;
+        &:first-letter {
+            text-transform: uppercase;
+        }
+    }
+}
+
+.header{ 
+	background-color: $color-black; color: $color-white;
+	.button.button-icon{ 
+		color: $color-white;
+	}
+}
+
+#headerMenuButton{ color: $color-white;}
+
+.textpic {
+            margin-top: 15px;
+            img {
+                max-width: 30px;
+                vertical-align: middle;
+            }
+        }
+    
+.picsgrid {
+    width: 31%;
+    margin: 1%;
+    display: inline-block;
+    height: 150px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position:relative;
+    .delete{
+        position: absolute;
+        right: 5px;
+        top:5px;
+        font-weight: bold;
+        font-size: 24px;
+        color: #F33;
+        cursor: pointer;
+        background-color: #FFF;
+        padding: 5px;
+        border-radius:20px;
+    }
+}
+
+
+.spinner{
+    width: 80%;
+    margin: auto;
+    height: auto;
+    svg {
+    width: 100%;
+    height: auto;
+    }
+} 
+
+
+/*
+* Modal
+* --------------------------------------------------
+*/
+
+.sidemenu-modal {
+    background-color: $color-black;
+    text-align: left;
+    ion-header-bar {
+        border-bottom: 1px solid  $color-white ;
+        background-color: $color-black;
+        .title,
+        .button {
+            color: $color-amber !important;
+        }
+        .title{
+            left: 5px!important;
+            right: 90px!important;
+        }
+    }
+    > ion-content {
+        color:  $color-white ;
+        padding: 40px;
+        //text-align: justify; 
+        font-size: 20px;
+        //line-height: 1.2em;
+        h1, h2, h3, h4 {
+            color:$color-amber;
+        }
+        .sidemenu-modal-content-title {
+            font-size: 130%;
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+        p{
+            margin-bottom: 10px;
+        }
+        a {
+            color: $color-amber;
+        }
+        .sidemenu-modal-content-button {
+            display: block;
+            text-align: center !important;
+            color: $color-amber !important;
+            font-size: 15pt;
+            cursor: hand;
+            cursor: pointer;
+        }
+        
+    }
+}
+
+
+.map-modal {
+        height: auto;
+        top: auto;
+        bottom:0;
+        text-align: center;
+        background-color: $color-black;
+        color: $color-white;
+        ion-header-bar {
+            border-bottom: 1px solid  $color-amber;
+            background-color: $color-amber;
+            .title,
+            .button {
+                color: $color-black !important;
+            }
+        }
+    h2{
+        margin-top: 35px;
+        color: $color-amber;
+    }
+    a {
+        margin-top: 20px;
+    }
+    .scroll-content {
+        position: static;
+        .bounds {
+            margin: 20px;
+            padding-top: 30px;
+        }
+    }
+    
+}
+
+#languageModal{
+    //padding: 0px;
+    ion-content{
+        padding: 0px;
+    }
+    div.item-content{
+        background-color: #27393D;
+        color: white;
+    }
+    .item-radio input:checked + .radio-content .item-content{
+        background-color: #3d677c;
+    }
+    i{ //checkmark
+        color: white; 
+    }
+}
+/*
+** Header menu
+* -------------------------------------
+*/
+
+select{
+	-webkit-appearance: none;        /*Removes default chrome and safari style*/
+	padding-left: 5px;
+}
+#headerMenu{
+	-webkit-text-size-adjust : none;
+	position: absolute;
+	z-index: 100;
+	border: 1px solid $color-amber;
+	background-color: $color-black;
+	color: $color-amber;
+	right: 0px;
+	top: 44px; 
+	font-size: 17px;
+	ul{
+	    li{
+	        border-bottom: 1px solid $color-amber;
+	        padding: 15px 18px 15px 18px;
+	        font-size: 100%;
+	        &:hover{
+	            background-color: $color-amber;
+	            color: $color-black;
+	        }
+	    }
+	}
+}
+ion-header-bar{
+    .button.back-button.buttons{
+        color: #ffffff;
+    }
+}
+
+#mapBtnControll{
+                position:absolute;
+                top:3px;
+                left:3px;
+                z-index:1000;
+                #bigmapbutton{
+                    position:relative;
+                    // position:absolute;
+                    // top:3px;
+                    // left:3px;
+                    // z-index:1000;
+                }
+                #centerpositionbutton{
+                    position:relative;
+
+                }
+            }
+
+.textAlignLeft{
+	text-align: left;
+}
+.textAlignRight{
+	text-align: right;
+}
+.textAlignCenter{
+	text-align: center;
+}
+.bold{
+	font-weight: bold;
+}
+.italic{
+	font-size: italic;
+}
+.hyperlink{
+	color: #3973B2;
+	text-decoration: none;
+}
+
+.center{
+	display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-direction: normal;
+    -moz-box-direction: normal;
+    -webkit-box-orient: horizontal;
+    -moz-box-orient: horizontal;
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-flex-wrap: nowrap;
+    -ms-flex-wrap: nowrap;
+    flex-wrap: nowrap;
+    -webkit-box-pack: center;
+    -moz-box-pack: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-align-content: stretch;
+    -ms-flex-line-pack: stretch;
+    align-content: stretch;
+    -webkit-box-align: center;
+    -moz-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+
+/* iOS fix and spef */
+.platform-ios{
+	#headerMenu{
+		margin-top: 20px;
+	}
+    .fixEmptySpace{ //Nested ion-content wrong margin top on iOS
+        ion-content{
+            top: 0!important;
+        }
+    }
+}
+// ionic issue #4661
+.platform-ios {
+  .title.title-center.header-item {
+    left: 49px!important;
+    right: 49px!important;
+  }
+}
+
+.platform-android {
+  .title.title-left.header-item {
+    right: 68px!important;
+    }
+}

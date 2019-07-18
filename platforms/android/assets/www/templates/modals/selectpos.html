@@ -1,0 +1,17 @@
+<ion-modal-view class="sidemenu-modal bigmapmodal">
+    <ion-header-bar>
+        <h1 class="title">{{ 'SLPS' | translate }}</h1>
+        <div class="buttons">
+            <button class="button button-clear" ng-click="closeBigMap()"><span class="ion-close-circled"> {{ 'CLOS' | translate }}</span></button>
+        </div>
+    </ion-header-bar>
+    <ion-content>
+        <div id='containerforbigmap'>
+        <!-- tiles="tiles"  -->
+             <leaflet id='latlongbigmap' layers="layers" center="center2"></leaflet>
+             <div id="mapBtnControll">
+             	<button id='centerpositionbutton' class="button button-small button-stable icon ion-pinpoint" ng-click='centerCurrentPositions()'></button>
+             </div>  
+        </div>
+    </ion-content>
+</ion-modal-view>

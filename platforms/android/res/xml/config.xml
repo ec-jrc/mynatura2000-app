@@ -1,0 +1,118 @@
+<?xml version='1.0' encoding='utf-8'?>
+<widget id="eu.europa.publications.mynatura2000" version="2.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+    <feature name="NativePageTransitions">
+        <param name="android-package" value="com.telerik.plugins.nativepagetransitions.NativePageTransitions" />
+        <param name="onload" value="true" />
+    </feature>
+    <feature name="Permissions">
+        <param name="android-package" value="com.android.plugins.Permissions" />
+    </feature>
+    <feature name="File">
+        <param name="android-package" value="org.apache.cordova.file.FileUtils" />
+        <param name="onload" value="true" />
+    </feature>
+    <allow-navigation href="cdvfile:*" />
+    <feature name="Geolocation">
+        <param name="android-package" value="org.apache.cordova.geolocation.Geolocation" />
+    </feature>
+    <feature name="InAppBrowser">
+        <param name="android-package" value="org.apache.cordova.inappbrowser.InAppBrowser" />
+    </feature>
+    <feature name="NetworkStatus">
+        <param name="android-package" value="org.apache.cordova.networkinformation.NetworkManager" />
+    </feature>
+    <feature name="YoikScreenOrientation">
+        <param name="android-package" value="net.yoik.cordova.plugins.screenorientation.YoikScreenOrientation" />
+    </feature>
+    <feature name="SplashScreen">
+        <param name="android-package" value="org.apache.cordova.splashscreen.SplashScreen" />
+        <param name="onload" value="true" />
+    </feature>
+    <feature name="StatusBar">
+        <param name="android-package" value="org.apache.cordova.statusbar.StatusBar" />
+        <param name="onload" value="true" />
+    </feature>
+    <feature name="Whitelist">
+        <param name="android-package" value="org.apache.cordova.whitelist.WhitelistPlugin" />
+        <param name="onload" value="true" />
+    </feature>
+    <feature name="SQLitePlugin">
+        <param name="android-package" value="io.sqlc.SQLitePlugin" />
+    </feature>
+    <feature name="Keyboard">
+        <param name="android-package" value="io.ionic.keyboard.IonicKeyboard" />
+        <param name="onload" value="true" />
+    </feature>
+    <feature name="Globalization">
+        <param name="android-package" value="org.apache.cordova.globalization.Globalization" />
+    </feature>
+    <feature name="Camera">
+        <param name="android-package" value="org.apache.cordova.camera.CameraLauncher" />
+    </feature>
+    <feature name="Device">
+        <param name="android-package" value="org.apache.cordova.device.Device" />
+    </feature>
+    <feature name="Notification">
+        <param name="android-package" value="org.apache.cordova.dialogs.Notification" />
+    </feature>
+    <feature name="Diagnostic">
+        <param name="android-package" value="cordova.plugins.Diagnostic" />
+        <param name="onload" value="true" />
+    </feature>
+    <feature name="ECASMobile">
+        <param name="android-package" value="eu.europa.ec.ecasmobile.client.cordova.plugin.ECASMobilePlugin" />
+    </feature>
+    <name>MyNatura2000</name>
+    <content src="index.html" />
+    <access origin="content:///*" />
+    <allow-intent href="*" />
+    <allow-intent href="mailto:*" />
+    <vs:platformSpecificValues xmlns:vs="http://schemas.microsoft.com/appx/2014/htmlapps">
+        <vs:platformSpecificWidget platformName="windows">
+            <vs:appxPackageIsForStore>True</vs:appxPackageIsForStore>
+        </vs:platformSpecificWidget>
+    </vs:platformSpecificValues>
+    <icon src="resources/android/icon/drawable-xhdpi-icon.png" />
+    <allow-navigation href="http://10.20.0.15:8100" />
+    <allow-navigation href="*" />
+    <splash density="land-ldpi" src="resources/android/splash/drawable-land-ldpi-screen.9.png" />
+    <splash density="land-mdpi" src="resources/android/splash/drawable-land-mdpi-screen.9.png" />
+    <splash density="land-hdpi" src="resources/android/splash/drawable-land-hdpi-screen.9.png" />
+    <splash density="land-xhdpi" src="resources/android/splash/drawable-land-xhdpi-screen.9.png" />
+    <splash density="land-xxhdpi" src="resources/android/splash/drawable-land-xxhdpi-screen.9.png" />
+    <splash density="land-xxxhdpi" src="resources/android/splash/drawable-land-xxxhdpi-screen.9.png" />
+    <splash density="port-ldpi" src="resources/android/splash/drawable-port-ldpi-screen.9.png" />
+    <splash density="port-mdpi" src="resources/android/splash/drawable-port-mdpi-screen.9.png" />
+    <splash density="port-hdpi" src="resources/android/splash/drawable-port-hdpi-screen.9.png" />
+    <splash density="port-xhdpi" src="resources/android/splash/drawable-port-xhdpi-screen.9.png" />
+    <splash density="port-xxhdpi" src="resources/android/splash/drawable-port-xxhdpi-screen.9.png" />
+    <splash density="port-xxxhdpi" src="resources/android/splash/drawable-port-xxxhdpi-screen.9.png" />
+    <splash density="xlarge-land-mdpi" src="resources/android/splash/drawable-xlarge-land-mdpi-screen.9.png" />
+    <splash density="xlarge-land-hdpi" src="resources/android/splash/drawable-xlarge-land-hdpi-screen.9.png" />
+    <splash density="xlarge-land-xhdpi" src="resources/android/splash/drawable-xlarge-land-xhdpi-screen.9.png" />
+    <splash density="xlarge-port-mdpi" src="resources/android/splash/drawable-xlarge-port-mdpi-screen.9.png" />
+    <splash density="xlarge-port-hdpi" src="resources/android/splash/drawable-xlarge-port-hdpi-screen.9.png" />
+    <splash density="xlarge-port-xhdpi" src="resources/android/splash/drawable-xlarge-port-xhdpi-screen.9.png" />
+    <icon density="ldpi" src="resources/android/icon/drawable-ldpi-icon.png" />
+    <icon density="mdpi" src="resources/android/icon/drawable-mdpi-icon.png" />
+    <icon density="hdpi" src="resources/android/icon/drawable-hdpi-icon.png" />
+    <icon density="xhdpi" src="resources/android/icon/drawable-xhdpi-icon.png" />
+    <icon density="xxhdpi" src="resources/android/icon/drawable-xxhdpi-icon.png" />
+    <icon density="xxxhdpi" src="resources/android/icon/drawable-xxxhdpi-icon.png" />
+    <preference name="loglevel" value="DEBUG" />
+    <preference name="webviewbounce" value="false" />
+    <preference name="UIWebViewBounce" value="false" />
+    <preference name="DisallowOverscroll" value="true" />
+    <preference name="SplashScreenDelay" value="1000" />
+    <preference name="FadeSplashScreen" value="false" />
+    <preference name="FadeSplashScreenDuration" value="1000" />
+    <preference name="BackupWebStorage" value="none" />
+    <preference name="SplashScreen" value="screen" />
+    <preference name="AutoHideSplashScreen" value="false" />
+    <preference name="ShowSplashScreenSpinner" value="false" />
+    <preference name="WindowsStoreIdentityName" value="15646guerrilla.nat2000" />
+    <preference name="WindowsStorePublisherName" value="guerrilla" />
+    <preference name="WindowsStoreDisplayName" value="nat2000" />
+    <preference name="android-minSdkVersion" value="19" />
+    <preference name="android-targetSdkVersion" value="28" />
+</widget>

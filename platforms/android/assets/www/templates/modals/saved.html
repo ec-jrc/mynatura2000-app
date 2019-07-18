@@ -1,0 +1,27 @@
+<ion-modal-view class="sidemenu-modal">
+    <ion-header-bar>
+        <h1 class="title">{{ 'ALRT' | translate }}</h1>
+        <div class="buttons">
+            <button class="button button-clear" ng-click="closemodalsaved()"><span class="ion-close-circled"> {{ 'CLOS' | translate }}</span></button>
+        </div>
+    </ion-header-bar>
+    <ion-content>
+        <div>
+            <div>
+            <p>{{modalmessage}}</p>
+                
+                <button ng-click="managedrafts()" ng-hide="main.title=='My Reports'" class="button button-full button-calm icon-left ion-ios-arrow-back">
+                  {{ 'MNGD' | translate }}
+                </button>
+                
+                <button ng-show='modalbutton'  ng-click="send_3()" class="button button-full button-balanced icon-left ion-checkmark-round">
+                  {{ 'PBLS' | translate }}
+                </button>
+                
+                <button  ng-show='modalbutton'  ng-click="closemodalsaved()"  class="button button-full button-assertive icon-left ion-ios-close">
+                  {{ 'DNPB' | translate }}
+                </button>
+        </div>
+        </div>
+    </ion-content>
+</ion-modal-view>
