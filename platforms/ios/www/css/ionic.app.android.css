@@ -6653,7 +6653,7 @@ button.item.item-button-right {
   margin: 20px 10px;
   border-radius: 2px;
   opacity: 0.6; }
-  
+
 .cardTransp {
   padding-top: 1px;
   padding-bottom: 1px;
@@ -9981,12 +9981,6 @@ a.button {
 * Fonts
 * --------------------------------------------------
 */
-@font-face {
-  font-family: 'ECSquareSansPro';
-  src: url("../lib/fonts/ECSquareSansPro.eot");
-  src: url("../lib/fonts/ECSquareSansPro.eot?#iefix") format("embedded-opentype"), url("../lib/fonts/ECSquareSansPro.woff2") format("woff2"), url("../lib/fonts/ECSquareSansPro.woff") format("woff"), url("../lib/fonts/ECSquareSansPro.ttf") format("truetype"), url("../lib/fonts/ECSquareSansPro.svg#ECSquareSansPro") format("svg");
-  font-weight: normal;
-  font-style: normal; }
 
 body,
 h1,
@@ -10007,7 +10001,7 @@ select,
 textarea,
 .ionic-body,
 .tab-item {
-  font-family: "ECSquareSansPro" !important; }
+  font-family: "Verdana" !important; }
 
 /* Corrections */
 .bar-subheader {
@@ -10079,7 +10073,7 @@ textarea,
       width: 31.33%;
       height: 48%;
       text-align: center;
-      padding: 5% 0 5% 0; 
+      padding: 5% 0 5% 0;
       float: left; }
     #home ion-content section.home-container .main-menu__button img {
 	    max-width: 100%;
@@ -10279,7 +10273,7 @@ ion-view#map .mapInfoFooter {
 #site-pics {
   width: 100%;
   height: 100%;
-  position: relative; 
+  position: relative;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: bottom;
@@ -10790,7 +10784,7 @@ ion-header-bar .button.back-button.buttons {
     }
 
 .view-main {
-	
+
 }
 
 .imgArrowLeft {
@@ -10824,11 +10818,11 @@ ion-header-bar .button.back-button.buttons {
       color: rgba(251, 181, 42, 0);
       -webkit-text-stroke: 1px #fbb52a; }
       #observation_pictures div.photoBrowserIndicator span.active {
-      color: #fbb52a; 
+      color: #fbb52a;
 }
 
 #centerpositionbutton {
-	box-shadow: 0 0 15px rgba(0,0,0,0.2); 
+	box-shadow: 0 0 15px rgba(0,0,0,0.2);
 }
 
 .linkButton {
@@ -10851,7 +10845,7 @@ ion-header-bar .button.back-button.buttons {
     background-color: #FFF;
     padding: 5px;
     border-radius: 20px; }
-  
+
 .select-style-search {
     border: 2px solid #444444;
     width: 100%;
@@ -10893,7 +10887,7 @@ ion-header-bar .button.back-button.buttons {
     padding-right: 6px; }
  .placeholder-icon:last-child {
     padding-left: 6px; }
-  
+
  /*
  .labelRandomImages {
 	top: 10px;
@@ -10912,7 +10906,7 @@ ion-header-bar .button.back-button.buttons {
  /*
  }
  */
- 
+
 .labelRandomImages {
 	top: 25px;
 	/* z-index: inherit; */
